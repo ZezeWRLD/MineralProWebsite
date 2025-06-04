@@ -1,0 +1,138 @@
+/* ===== Global Responsive Styles ===== */
+@media (max-width: 1200px) {
+  /* Tablet/Laptop transition sizes */
+  .hero-text {
+    width: 80%;
+    font-size: 24px;
+  }
+  
+  .content-card {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .slider-container {
+    order: -1; /* Move slider above text on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile styles */
+  
+  /* Header/Navigation */
+  .header {
+    height: 400px;
+    clip-path: none;
+  }
+  
+  .logo {
+    width: 120px;
+    height: auto;
+    top: 20px;
+    left: 20px;
+  }
+  
+  /* Mobile menu */
+  .nav-bar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    background: #002060;
+    flex-direction: column;
+    padding: 80px 20px;
+    z-index: 100;
+  }
+  
+  .nav-bar.active {
+    display: flex;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    z-index: 101;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+  }
+  
+  /* Typography */
+  .section-title {
+    font-size: 36px;
+  }
+  
+  .story-text, .card-content p, .feature-title {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  /* Layouts */
+  .story-content, .team, .strength {
+    flex-direction: column;
+  }
+  
+  .team-content, .strength-content {
+    width: 100%;
+  }
+  
+  .team-image, .strength-image {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+  }
+  
+  /* Forms */
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-form-container {
+    flex-direction: column;
+  }
+  
+  .form-intro {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  /* Footer */
+  .footer-top {
+    height: auto;
+    padding: 40px 20px;
+  }
+  
+  .footer-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Small mobile devices */
+  .hero-text {
+    top: 150px;
+    font-size: 20px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .slider-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+  
+  .slider, .slider-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+}
