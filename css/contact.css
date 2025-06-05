@@ -210,6 +210,8 @@ iframe {
     display: flex;
     justify-content: space-between;
     margin-top: 100px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.161);
+      border-radius: 10px;
 }
 
 .form-intro {
@@ -225,7 +227,6 @@ iframe {
     width: 753px;
     background: white;
     border-radius: 15px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.161);
     padding: 40px;
     margin: 0 auto;
 }
@@ -300,7 +301,7 @@ textarea.form-input {
     background-color: rgba(0, 150, 62, 0.859);
     color: white;
     border: none;
-    border-radius: 30.5px;
+    border-radius: 20px;
     padding: 15px 30px;
     font-family: 'Sans Serif Collection', sans-serif;
     font-size: 25px;
@@ -316,7 +317,7 @@ textarea.form-input {
     background-color: #d81616;;
     color: #fcfdff;
     padding: 1rem 3rem;
-    border-radius: 30.5px;
+    border-radius: 20px;
     font-family: 'Sans Serif Collection';
     font-size: 25px;
     cursor: pointer;
@@ -325,6 +326,44 @@ textarea.form-input {
 .reset-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* === Scaled Down Form === */
+.contact-form-container {
+    transform: scale(0.85);
+    transform-origin: top center;
+    transition: transform 0.3s ease;
+}
+/* === Toggle Button === */
+.quote-toggle-wrapper {
+    max-width: 1400px;
+    margin: 2rem auto 0;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 3rem;
+    padding-right: 2rem;
+    padding-top: 3rem;
+}
+
+.quote-toggle-btn {
+    padding: 1rem 2rem;
+    border-radius: 39px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 27px;
+    background-color: #002060;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quote-toggle-btn:hover {
+    background-color: #003080;
+}
+
+/* === Hidden Form Style === */
+.contact-form-container.hidden {
+    display: none;
 }
 
 
@@ -429,3 +468,4 @@ textarea.form-input {
     height: 300px;
   }
 }
+

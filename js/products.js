@@ -52,3 +52,18 @@ const backToTopBtn = document.getElementById("backToTop");
     form.reset(); // This is optional since <button type="reset"> does this automatically
     // You can also reset error messages, highlight borders, etc., here if needed
   });
+
+  const toggleBtn = document.getElementById('toggleQuoteBtn');
+  const quoteSection = document.getElementById('quote');
+
+  toggleBtn.addEventListener('click', () => {
+    quoteSection.classList.toggle('hidden');
+    toggleBtn.textContent = quoteSection.classList.contains('hidden')
+      ? 'Request a Quote'
+      : 'Close Form';
+
+    // Scroll to form when shown
+    if (!quoteSection.classList.contains('hidden')) {
+      quoteSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
