@@ -11,7 +11,7 @@ const backToTopBtn = document.getElementById("backToTop");
   });
 
 // EmailJS init
-emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your public key
+/*emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your public key
 
 document.getElementById("contact-form").addEventListener("submit", function (e) {
   e.preventDefault();
@@ -61,7 +61,7 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
       message.className = "form-message error";
       console.error("EmailJS error:", error);
     });
-});
+}); */
 
 const form = document.getElementById('contact-form');
 const formMessage = document.getElementById('form-message');
@@ -76,3 +76,18 @@ form.addEventListener('reset', () => {
     input.classList.remove('input-error', 'input-success');
   });
 });
+
+const toggleBtn = document.getElementById('toggleQuoteBtn');
+  const quoteSection = document.getElementById('contactForm');
+
+  toggleBtn.addEventListener('click', () => {
+    quoteSection.classList.toggle('hidden');
+    toggleBtn.textContent = quoteSection.classList.contains('hidden')
+      ? 'Enquire'
+      : 'Close Form';
+
+    // Scroll to form when shown
+    if (!quoteSection.classList.contains('hidden')) {
+      quoteSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
