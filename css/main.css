@@ -156,6 +156,12 @@ p  { font-size: 1rem; line-height: 1.75; color: var(--grey-text); }
   transition: var(--transition);
 }
 .topbar-social a:hover { background: var(--teal); color: var(--white); }
+.topbar-social a.social-svg-link svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: currentColor;
+}
 
 /* ── NAVBAR ──────────────────────────────────────────────── */
 .navbar {
@@ -605,6 +611,99 @@ p  { font-size: 1rem; line-height: 1.75; color: var(--grey-text); }
   transition: var(--transition);
 }
 .footer-social-links a:hover { background: var(--teal); color: var(--white); transform: translateY(-2px); }
+.footer-social-links a.social-svg-link svg,
+.social-row .footer-social-links a.social-svg-link svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  fill: currentColor;
+}
+
+/* ── SERVICE PAGE IMAGE SLIDERS ─────────────────────────── */
+.service-slider .slider-container {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--navy);
+  box-shadow: var(--shadow-md);
+}
+.service-slider .slider-track {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+}
+.service-slider .slider-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.65s ease;
+  pointer-events: none;
+}
+.service-slider .slider-img.active {
+  opacity: 1;
+  z-index: 1;
+}
+.service-slider .slider-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 2;
+}
+.service-slider .slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.45);
+  transition: transform 0.2s, background 0.2s;
+}
+.service-slider .slider-dot:hover { background: rgba(255, 255, 255, 0.75); }
+.service-slider .slider-dot.active {
+  background: var(--teal);
+  transform: scale(1.2);
+}
+
+/* Services page: centre imagery in sliders and hero */
+.page-services .service-slider .slider-track {
+  background: linear-gradient(145deg, var(--navy) 0%, var(--navy-mid) 55%, #0a3055 100%);
+}
+.page-services .service-slider .slider-img {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.85rem;
+  box-sizing: border-box;
+}
+.page-services .split .split-img.service-slider {
+  justify-self: center;
+  align-self: center;
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+}
+.page-services .hero .hero-bg-img {
+  object-position: center center;
+}
+
+/* About page partner marquee (full-colour logos) */
+.about-partners-marquee img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  opacity: 1;
+  filter: none;
+}
 .footer-bottom {
   padding: 1.25rem 0;
   display: flex;

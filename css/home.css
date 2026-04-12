@@ -60,11 +60,11 @@
   height: 48px;
   width: auto;
   object-fit: contain;
-  opacity: .65;
-  filter: grayscale(1);
+  opacity: 1;
+  filter: none;
   transition: var(--transition);
 }
-.partners-track img:hover { opacity: 1; filter: grayscale(0); }
+.partners-track img:hover { opacity: 0.92; transform: scale(1.03); }
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }

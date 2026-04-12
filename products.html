@@ -3,118 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact Mineral Pro Enterprise — Phone, email, locations and enquiry form.">
-  <title>Contact Us | Mineral Pro Enterprise</title>
+  <meta name="description" content="Mineral Pro Enterprise — engineering supply divisions: filtration, conveyors, maintenance, electrical, automation and digital services.">
+  <title>Services | Mineral Pro Enterprise</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    /* CONTACT PAGE SPECIFIC */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 4rem;
-      align-items: start;
+    .service-anchor { scroll-margin-top: 100px; }
+    .service-section .split-img { align-self: stretch; }
+    .service-list {
+      margin: 1.25rem 0 0;
+      padding-left: 1.25rem;
+      list-style: disc;
+      color: var(--grey-text);
     }
-    .contact-info-card {
-      background: var(--navy);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      color: var(--white);
-      position: sticky;
-      top: 100px;
-    }
-    .contact-info-card .label { color: var(--teal); }
-    .contact-info-card h2 { color: var(--white); margin-bottom: 1.5rem; }
-    .contact-detail {
+    .service-list li { margin-bottom: .5rem; font-size: .95rem; }
+    .services-toc {
       display: flex;
-      gap: 1.1rem;
-      align-items: flex-start;
-      padding: 1.2rem 0;
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin-top: 1.5rem;
     }
-    .contact-detail:last-of-type { border-bottom: none; }
-    .contact-detail-icon {
-      width: 44px; height: 44px;
-      background: rgba(0,180,160,.15);
-      border: 1px solid rgba(0,180,160,.3);
-      border-radius: 10px;
-      display: grid; place-items: center;
-      flex-shrink: 0;
+    .services-toc a {
+      display: inline-block;
+      padding: .45rem 1rem;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 6px;
+      font-family: var(--font-head);
+      font-size: .88rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.85);
+      transition: var(--transition);
     }
-    .contact-detail-icon svg { width: 20px; height: 20px; color: var(--teal); }
-    .contact-detail-text small {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: .68rem;
-      color: rgba(255,255,255,.4);
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      margin-bottom: .3rem;
-    }
-    .contact-detail-text p {
+    .services-toc a:hover {
+      background: var(--teal);
+      border-color: var(--teal);
       color: var(--white);
-      font-size: .95rem;
-    }
-    .social-row {
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,.08);
-    }
-    .social-row small {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: .68rem;
-      color: rgba(255,255,255,.4);
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      margin-bottom: 1rem;
-    }
-    .social-row .footer-social-links { justify-content: flex-start; }
-
-    .form-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--grey-mid);
-      padding: 2.5rem;
-      box-shadow: var(--shadow-sm);
-    }
-    .form-card h3 { color: var(--navy); margin-bottom: .5rem; font-size: 1.8rem; }
-    .form-card > p { margin-bottom: 2rem; }
-
-    .location-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .location-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      border: 1px solid var(--grey-mid);
-      overflow: hidden;
-    }
-    .location-card-map {
-      height: 240px;
-      background: var(--grey-light);
-      overflow: hidden;
-    }
-    .location-card-map iframe { width: 100%; height: 100%; }
-    .location-card-body { padding: 1.5rem; }
-    .location-card-body .label { margin-bottom: .5rem; }
-    .location-card-body h4 { color: var(--navy); margin-bottom: .4rem; }
-    .location-card-body p { font-size: .9rem; }
-
-    @media (max-width: 900px) {
-      .contact-grid { grid-template-columns: 1fr; }
-      .contact-info-card { position: static; }
-      .location-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-<body>
+<body class="page-services">
 
-<!-- TOP BAR -->
 <div class="topbar">
   <div class="container">
     <div class="topbar-info">
@@ -123,12 +53,14 @@
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Midrand, Johannesburg</span>
     </div>
     <div class="topbar-social">
-      <a href="#">ig</a><a href="#">fb</a><a href="#">in</a><a href="#">wa</a>
+      <a href="#" class="social-svg-link" aria-label="Instagram"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-instagram"/></svg></a>
+      <a href="#" class="social-svg-link" aria-label="Facebook"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-facebook"/></svg></a>
+      <a href="#" class="social-svg-link" aria-label="LinkedIn"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-linkedin"/></svg></a>
+      <a href="https://wa.me/27827421013" class="social-svg-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-whatsapp"/></svg></a>
     </div>
   </div>
 </div>
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="container">
     <a href="index.html" class="navbar-logo">
@@ -141,9 +73,9 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="aboutus.html">About Us</a></li>
-      <li><a href="products.html">Services</a></li>
-      <li><a href="contactus.html" class="active">Contact</a></li>
-      <li class="nav-cta"><a href="#contactForm" class="btn btn-primary">Request a Quote</a></li>
+      <li><a href="products.html" class="active">Services</a></li>
+      <li><a href="contactus.html">Contact</a></li>
+      <li class="nav-cta"><a href="contactus.html#contactForm" class="btn btn-primary">Request a Quote</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -152,212 +84,246 @@
 </nav>
 <div class="nav-overlay" id="navOverlay"></div>
 
-<!-- HERO -->
 <section class="hero">
-  <img class="hero-bg-img" src="media/dion-beetson-oF7hh97lVqA-unspl.png" alt="" onerror="this.style.display='none'">
+  <img class="hero-bg-img" src="media/hardware-tools-931466_1280.jpg" alt="" aria-hidden="true" onerror="this.style.display='none'">
   <div class="container">
     <div class="hero-content">
-      <span class="label">Get in Touch</span>
-      <h1>Talk to an<br>Engineer</h1>
-      <p>Whether you have a specific procurement requirement, need technical advice, or want to explore a partnership — our team is ready to engage. We respond within 24 hours.</p>
+      <span class="label">What We Do</span>
+      <h1>Service<br>Divisions</h1>
+      <p>Specialized procurement and engineering support across filtration, bulk materials handling, plant maintenance, electrical systems, automation and digital services — structured for industrial and mining operations.</p>
       <div class="hero-actions">
-        <a href="#contactForm" class="btn btn-primary">Send an Enquiry</a>
-        <a href="tel:0827421013" class="btn btn-outline">Call Us Now</a>
+        <a href="contactus.html#contactForm" class="btn btn-primary">Request a Quote</a>
+        <a href="tel:0827421013" class="btn btn-outline">Call Us</a>
       </div>
+      <nav class="services-toc" aria-label="Jump to service sections">
+        <a href="#filtration">Filtration</a>
+        <a href="#conveyor">Conveyors</a>
+        <a href="#maintenance">Maintenance</a>
+        <a href="#electrical">Electrical</a>
+        <a href="#automation">Automation</a>
+        <a href="#digital">Digital</a>
+      </nav>
     </div>
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
-<section class="section" id="contactForm">
+<section class="section service-section service-anchor" id="filtration">
   <div class="container">
-    <div class="contact-grid">
-
-      <!-- LEFT: Info -->
-      <div class="contact-info-card">
-        <span class="label">Contact Details</span>
-        <h2>Better Together,<br>Through Business Excellence</h2>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-          </div>
-          <div class="contact-detail-text">
-            <small>Phone</small>
-            <p><a href="tel:0827421013" style="color:var(--white);">082 742 1013</a></p>
-          </div>
+    <div class="split">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow"><span class="label">Division 01</span></div>
+          <h2>Filtration Systems</h2>
+          <p>High-performance filtration components for plants, gas pipelines and industrial fluid systems — sourced for pressure ratings, media compatibility and duty cycles that match your process.</p>
         </div>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div class="contact-detail-text">
-            <small>Email</small>
-            <p><a href="mailto:mineralproptyltd@gmail.com" style="color:var(--white);">mineralproptyltd@gmail.com</a></p>
-          </div>
-        </div>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div class="contact-detail-text">
-            <small>Head Office</small>
-            <p>Cnr 16th Road &amp; George Avenue<br>Halfway House, Midrand<br>Johannesburg, 0001</p>
-          </div>
-        </div>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <div class="contact-detail-text">
-            <small>Workshop</small>
-            <p>Workshop No. 09<br>Malokiba Street, Evander, 2385</p>
-          </div>
-        </div>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="contact-detail-text">
-            <small>Business Hours</small>
-            <p>Monday – Friday: 08:00 – 17:00<br><span style="color:rgba(255,255,255,.45); font-size:.88rem;">Saturday &amp; Sunday: Closed</span></p>
-          </div>
-        </div>
-
-        <div class="social-row">
-          <small>Follow Us</small>
-          <div class="footer-social-links">
-            <a href="#" aria-label="Instagram">ig</a>
-            <a href="#" aria-label="Facebook">fb</a>
-            <a href="#" aria-label="LinkedIn">in</a>
-            <a href="#" aria-label="WhatsApp">wa</a>
-            <a href="#" aria-label="Pinterest">pt</a>
-          </div>
-        </div>
+        <ul class="service-list">
+          <li>Gas line filter elements</li>
+          <li>Cyclone separators and filters</li>
+          <li>High-flow housings and strainers</li>
+        </ul>
+        <a href="contactus.html#contactForm" class="btn btn-navy" style="margin-top:1.75rem;">Enquire about filtration</a>
       </div>
-
-      <!-- RIGHT: Form -->
-      <div class="form-card">
-        <h3>Send Us an Enquiry</h3>
-        <p>Fill in the form below and our engineering team will be in touch within 24 hours.</p>
-
-        <form id="mpForm" novalidate>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
-            <div class="form-group">
-              <label for="fname">First Name *</label>
-              <input class="form-input" type="text" id="fname" name="firstname" placeholder="John" required>
-            </div>
-            <div class="form-group">
-              <label for="lname">Last Name *</label>
-              <input class="form-input" type="text" id="lname" name="lastname" placeholder="Smith" required>
-            </div>
+      <div class="split-img service-slider">
+        <div class="slider-container">
+          <div class="slider-track">
+            <img class="slider-img active" src="media/Lined-Plug-Valve.png" alt="Industrial valves and filtration equipment" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/oil-2496712_1280.jpg" alt="Industrial filtration and fluid systems" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/Mask_Group_1.png" alt="Plant filtration components" onerror="this.style.display='none'">
           </div>
-          <div class="form-group" style="margin-top:1.25rem;">
-            <label for="company">Company Name *</label>
-            <input class="form-input" type="text" id="company" name="company" placeholder="Your company" required>
+          <div class="slider-dots">
+            <button type="button" class="slider-dot active" aria-label="Filtration image 1"></button>
+            <button type="button" class="slider-dot" aria-label="Filtration image 2"></button>
+            <button type="button" class="slider-dot" aria-label="Filtration image 3"></button>
           </div>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-top:1.25rem;">
-            <div class="form-group">
-              <label for="phone">Phone Number *</label>
-              <input class="form-input" type="tel" id="phone" name="phone" placeholder="082 000 0000" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input class="form-input" type="email" id="email" name="email" placeholder="you@company.com" required>
-            </div>
-          </div>
-          <div class="form-group" style="margin-top:1.25rem;">
-            <label for="service">Service Interest</label>
-            <select class="form-input form-select" id="service" name="service">
-              <option value="">— Select a service area —</option>
-              <option>Filtration Systems</option>
-              <option>Conveyor Systems</option>
-              <option>Engineering &amp; Maintenance</option>
-              <option>Electrical &amp; Instrumentation</option>
-              <option>Automation &amp; Smart Systems</option>
-              <option>Digital &amp; Predictive Services</option>
-              <option>General Enquiry</option>
-            </select>
-          </div>
-          <div class="form-group" style="margin-top:1.25rem;">
-            <label for="message">Message / Requirements *</label>
-            <textarea class="form-textarea" id="message" name="enquiry" rows="5" placeholder="Describe your requirements, quantities, urgency, or any relevant context…" required></textarea>
-          </div>
-          <div class="form-actions" style="margin-top:1.5rem;">
-            <button type="submit" class="btn btn-primary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Send Enquiry
-            </button>
-            <button type="reset" class="btn" style="background:var(--grey-light); color:var(--navy); border:1px solid var(--grey-mid);">Clear</button>
-          </div>
-          <div id="formMsg" class="form-message"></div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- LOCATIONS -->
-<section class="section section-dark">
+<section class="section section-dark service-section service-anchor" id="conveyor">
   <div class="container">
-    <div class="section-header centered">
-      <div class="section-eyebrow"><span class="label">Find Us</span></div>
-      <h2>Our Locations</h2>
-      <p>Two strategic facilities serving clients across South Africa's industrial heartland.</p>
-    </div>
-    <div class="location-grid">
-      <div class="location-card">
-        <div class="location-card-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.0897901662506!2d28.13297089919392!3d-25.965095418054506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956e4a82df7811%3A0xa4511513403b9a0!2sSupa%20Cubed%20%2F%20Alphen%20Square!5e0!3m2!1sen!2sza!4v1745340651262!5m2!1sen!2sza"
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            title="Midrand Head Office map" style="border:0;"></iframe>
+    <div class="split reverse">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow"><span class="label">Division 02</span></div>
+          <h2>Conveyor Systems</h2>
+          <p>End-to-end bulk materials handling support for surface and underground mining — belts, components and fabricated structures aligned to your duty and safety standards.</p>
         </div>
-        <div class="location-card-body">
-          <span class="label">Head Office</span>
-          <h4>Midrand Headquarters</h4>
-          <p>Cnr 16th Road &amp; George Avenue<br>Halfway House, Midrand, Johannesburg, 0001</p>
-        </div>
+        <ul class="service-list">
+          <li>Conveyor belts (all sizes)</li>
+          <li>Guide rollers and pulleys</li>
+          <li>Structural fabrication and guards</li>
+        </ul>
+        <a href="contactus.html#contactForm" class="btn btn-primary" style="margin-top:1.75rem;">Enquire about conveyors</a>
       </div>
-      <div class="location-card">
-        <div class="location-card-map" style="display:flex; align-items:center; justify-content:center; background:var(--navy);">
-          <div style="text-align:center; color:rgba(255,255,255,.3);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;margin:0 auto 1rem;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <p style="font-family:var(--font-mono); font-size:.72rem; letter-spacing:.15em; text-transform:uppercase;">Evander, Mpumalanga</p>
+      <div class="split-img service-slider">
+        <div class="slider-container">
+          <div class="slider-track">
+            <img class="slider-img active" src="media/conveyorbelt.png" alt="Heavy-duty conveyor belt" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/Conveyor-Guards.webp" alt="Conveyor guards and safety structures" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/Image_6.png" alt="Bulk materials handling" onerror="this.style.display='none'">
           </div>
-        </div>
-        <div class="location-card-body">
-          <span class="label">Workshop Facility</span>
-          <h4>Delmas Workshop</h4>
-          <p>Workshop No. 09<br>Malokiba Street, Evander, 2385</p>
+          <div class="slider-dots">
+            <button type="button" class="slider-dot active" aria-label="Conveyor image 1"></button>
+            <button type="button" class="slider-dot" aria-label="Conveyor image 2"></button>
+            <button type="button" class="slider-dot" aria-label="Conveyor image 3"></button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
+<section class="section service-section service-anchor" id="maintenance">
+  <div class="container">
+    <div class="split">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow"><span class="label">Division 03</span></div>
+          <h2>Engineering &amp; Maintenance</h2>
+          <p>Holistic mechanical plant maintenance and project support — spare parts, rotating equipment and piping to maximise asset uptime.</p>
+        </div>
+        <ul class="service-list">
+          <li>Spare parts and piping supply</li>
+          <li>Valves, pumps and gearboxes</li>
+          <li>Plant maintenance support</li>
+        </ul>
+        <a href="contactus.html#contactForm" class="btn btn-navy" style="margin-top:1.75rem;">Enquire about maintenance</a>
+      </div>
+      <div class="split-img service-slider">
+        <div class="slider-container">
+          <div class="slider-track">
+            <img class="slider-img active" src="media/ehmitrich-Jt01DmHeiqM-unsplash.jpg" alt="Engineering and plant maintenance" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/hardware-tools-931466_1280.jpg" alt="Maintenance tools and hardware" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/industrial-2716236_1280.jpg" alt="Industrial plant operations" onerror="this.style.display='none'">
+          </div>
+          <div class="slider-dots">
+            <button type="button" class="slider-dot active" aria-label="Maintenance image 1"></button>
+            <button type="button" class="slider-dot" aria-label="Maintenance image 2"></button>
+            <button type="button" class="slider-dot" aria-label="Maintenance image 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark service-section service-anchor" id="electrical">
+  <div class="container">
+    <div class="split reverse">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow"><span class="label">Division 04</span></div>
+          <h2>Electrical &amp; Instrumentation</h2>
+          <p>Supply of motors, transmitters, transformers, control panels, cables and hydraulic equipment for industrial control and power distribution.</p>
+        </div>
+        <ul class="service-list">
+          <li>Motors and transformers</li>
+          <li>Control panels and cables</li>
+          <li>Hydraulic equipment</li>
+        </ul>
+        <a href="contactus.html#contactForm" class="btn btn-primary" style="margin-top:1.75rem;">Enquire about electrical</a>
+      </div>
+      <div class="split-img service-slider">
+        <div class="slider-container">
+          <div class="slider-track">
+            <img class="slider-img active" src="media/motor-7903404_1280.jpg" alt="Industrial electric motor" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/90-Hydraulic-Hose.jpg" alt="Hydraulic and instrumentation equipment" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/pexels-energepic-com-27411-110469.jpg" alt="Electrical power and control" onerror="this.style.display='none'">
+          </div>
+          <div class="slider-dots">
+            <button type="button" class="slider-dot active" aria-label="Electrical image 1"></button>
+            <button type="button" class="slider-dot" aria-label="Electrical image 2"></button>
+            <button type="button" class="slider-dot" aria-label="Electrical image 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section service-section service-anchor" id="automation">
+  <div class="container">
+    <div class="split">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow"><span class="label">Division 05</span></div>
+          <h2>Automation &amp; Smart Systems</h2>
+          <p>Automated storage, retrieval systems and AGVs — procurement and integration support for modern industrial and logistics operations.</p>
+        </div>
+        <ul class="service-list">
+          <li>AS/RS systems</li>
+          <li>Automated guided vehicles</li>
+          <li>Micro-fulfilment centres</li>
+        </ul>
+        <a href="contactus.html#contactForm" class="btn btn-navy" style="margin-top:1.75rem;">Enquire about automation</a>
+      </div>
+      <div class="split-img service-slider">
+        <div class="slider-container">
+          <div class="slider-track">
+            <img class="slider-img active" src="media/pexels-pixabay-209230.png" alt="Automation and control systems" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/Mask_Group_2.png" alt="Smart industrial systems" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/Image_9.png" alt="Automated operations" onerror="this.style.display='none'">
+          </div>
+          <div class="slider-dots">
+            <button type="button" class="slider-dot active" aria-label="Automation image 1"></button>
+            <button type="button" class="slider-dot" aria-label="Automation image 2"></button>
+            <button type="button" class="slider-dot" aria-label="Automation image 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark service-section service-anchor" id="digital">
+  <div class="container">
+    <div class="split reverse">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow"><span class="label">Division 06</span></div>
+          <h2>Digital &amp; Predictive Services</h2>
+          <p>Technical support layered with predictive analytics and data-driven maintenance — aimed at reducing unplanned downtime and optimising spare parts lifecycle.</p>
+        </div>
+        <ul class="service-list">
+          <li>24/7 expert access</li>
+          <li>Predictive maintenance insights</li>
+          <li>Spare parts lifecycle support</li>
+        </ul>
+        <a href="contactus.html#contactForm" class="btn btn-primary" style="margin-top:1.75rem;">Enquire about digital services</a>
+      </div>
+      <div class="split-img service-slider">
+        <div class="slider-container">
+          <div class="slider-track">
+            <img class="slider-img active" src="media/alpha-perspective-Pw5jK6yjJR4-.png" alt="Digital operations and analytics" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/Screenshot_2025-01-30_094732.png" alt="Data and monitoring" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/pexels-cdc-library-3993241.png" alt="Predictive and digital services" onerror="this.style.display='none'">
+          </div>
+          <div class="slider-dots">
+            <button type="button" class="slider-dot active" aria-label="Digital services image 1"></button>
+            <button type="button" class="slider-dot" aria-label="Digital services image 2"></button>
+            <button type="button" class="slider-dot" aria-label="Digital services image 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="cta-band">
   <div class="container">
     <div>
-      <h2>Ready to Start?</h2>
-      <p>Our engineering procurement team is standing by. Contact us today.</p>
+      <h2>Need a Technical Quote?</h2>
+      <p>Tell us your scope, quantities and timelines — we respond within 24 hours.</p>
     </div>
     <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="tel:0827421013" class="btn btn-primary">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-        Call 082 742 1013
-      </a>
-      <a href="mailto:mineralproptyltd@gmail.com" class="btn btn-outline">Send an Email</a>
+      <a href="contactus.html#contactForm" class="btn btn-primary">Contact Us</a>
+      <a href="tel:0827421013" class="btn btn-outline">Call 082 742 1013</a>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -366,7 +332,10 @@
         <p>South Africa's trusted Engineering Supply Specialist and Industrial Procurement Partner.</p>
         <div class="reg">Reg. No: 2020/772030/07 · Licence: W/2020/0087</div>
         <div class="footer-social-links">
-          <a href="#">ig</a><a href="#">fb</a><a href="#">in</a><a href="#">wa</a>
+          <a href="#" class="social-svg-link" aria-label="Instagram"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-instagram"/></svg></a>
+          <a href="#" class="social-svg-link" aria-label="Facebook"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-facebook"/></svg></a>
+          <a href="#" class="social-svg-link" aria-label="LinkedIn"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-linkedin"/></svg></a>
+          <a href="https://wa.me/27827421013" class="social-svg-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-whatsapp"/></svg></a>
         </div>
       </div>
       <div class="footer-col">
@@ -386,6 +355,7 @@
           <li><a href="products.html#maintenance">Engineering &amp; Maintenance</a></li>
           <li><a href="products.html#electrical">Electrical &amp; Instrumentation</a></li>
           <li><a href="products.html#automation">Automation &amp; Smart Systems</a></li>
+          <li><a href="products.html#digital">Digital &amp; Predictive Services</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -399,7 +369,7 @@
     </div>
     <div class="footer-bottom">
       <p>© 2024 Mineral Pro Enterprise Pty Ltd — All Rights Reserved.</p>
-      <p>Designed for <a href="#">mineralpro.co.za</a></p>
+      <p>Designed for <a href="https://mineralpro.co.za" target="_blank" rel="noopener noreferrer">mineralpro.co.za</a></p>
     </div>
   </div>
 </footer>
@@ -408,5 +378,6 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 <script src="js/main.js"></script>
+<script src="js/products.js"></script>
 </body>
 </html>
