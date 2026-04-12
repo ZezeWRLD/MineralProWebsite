@@ -1,176 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mineral Pro - Contact Us</title>
- <link rel="stylesheet" href="css/contact.css">
- <link rel="stylesheet" href="css/responsive.css">
- <script src="js/contactus.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Mineral Pro Enterprise — Phone, email, locations and enquiry form.">
+  <title>Contact Us | Mineral Pro Enterprise</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* CONTACT PAGE SPECIFIC */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-info-card {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      color: var(--white);
+      position: sticky;
+      top: 100px;
+    }
+    .contact-info-card .label { color: var(--teal); }
+    .contact-info-card h2 { color: var(--white); margin-bottom: 1.5rem; }
+    .contact-detail {
+      display: flex;
+      gap: 1.1rem;
+      align-items: flex-start;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .contact-detail:last-of-type { border-bottom: none; }
+    .contact-detail-icon {
+      width: 44px; height: 44px;
+      background: rgba(0,180,160,.15);
+      border: 1px solid rgba(0,180,160,.3);
+      border-radius: 10px;
+      display: grid; place-items: center;
+      flex-shrink: 0;
+    }
+    .contact-detail-icon svg { width: 20px; height: 20px; color: var(--teal); }
+    .contact-detail-text small {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      color: rgba(255,255,255,.4);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: .3rem;
+    }
+    .contact-detail-text p {
+      color: var(--white);
+      font-size: .95rem;
+    }
+    .social-row {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .social-row small {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      color: rgba(255,255,255,.4);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 1rem;
+    }
+    .social-row .footer-social-links { justify-content: flex-start; }
+
+    .form-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--grey-mid);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .form-card h3 { color: var(--navy); margin-bottom: .5rem; font-size: 1.8rem; }
+    .form-card > p { margin-bottom: 2rem; }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .location-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--grey-mid);
+      overflow: hidden;
+    }
+    .location-card-map {
+      height: 240px;
+      background: var(--grey-light);
+      overflow: hidden;
+    }
+    .location-card-map iframe { width: 100%; height: 100%; }
+    .location-card-body { padding: 1.5rem; }
+    .location-card-body .label { margin-bottom: .5rem; }
+    .location-card-body h4 { color: var(--navy); margin-bottom: .4rem; }
+    .location-card-body p { font-size: .9rem; }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-info-card { position: static; }
+      .location-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
-    <header class="header">
 
-        <img class="header-overlay" src="media/dion-beetson-oF7hh97lVqA-unspl.png" alt="Header background">
-        <img class="logo" src="media/Mineral_Logo.png" alt="Mineral Pro Logo">   
-        <nav class="nav-bar" id="mainNav">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="aboutus.html" class="nav-link">About us</a>
-            <a href="products.html" class="nav-link">Products</a>
-            <a href="#" class="nav-link">Contact us</a>
-        </nav>
-          <div class="hero-text">
-            <h1>Get in Touch<br>Better together, Through business excellence</h1>
-          </div>
-
-    </header>
-
-        <!-- Contact Information Section -->
-        <section class="contact-section">
-            <h2 class="section-title">Contact Information</h2>
-            
-            <div class="contact-info">
-                <img class="contact-icon" src="media/Image_12.png" alt="Phone icon">
-                <p class="contact-text">Phone: <strong>0827421013</strong></p>
-            </div>
-            
-            <div class="contact-info">
-                <img class="contact-icon" src="media/Image_13.png" alt="Email icon">
-                <p class="contact-text">Email: <strong>mineralproptyltd@gmail.com</strong></p>
-            </div>
-            
-            <div class="social-section">
-                <h3 class="social-title">Stay updated through our Social Media Platforms</h3>
-                <div class="social-icons">
-                    <a href="#"> <img class="social-icon" src="media/n_929237_instagram_icon.png" alt="Instagram"></a>
-                    <a href="#"><img class="social-icon" src="media/n_102573_applications_facebook.png" alt="Facebook"></a>
-                    <a href="#"><img class="social-icon" src="media/n_17725_linkedin_social_icon.png" alt="LinkedIn"></a>
-                    <a href="#"><img class="social-icon" src="media/n_102606_applications_media_so.png"  alt="WhatsApp"></a>
-                    <a href="#"><img class="social-icon" src="media/icons8-pinterest-80.png"  alt="Pinterest icon by Icons8"></a>
-                </div>
-            </div>
-        </section>
-         <!-- Location Section -->
-         <section class="location-section">
-            <h2 class="section-title">Location</h2>
-        <div class="mapcontents">
-            <div class="address-box">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.0897901662506!2d28.13297089919392!3d-25.965095418054506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956e4a82df7811%3A0xa4511513403b9a0!2sSupa%20Cubed%20%2F%20Alphen%20Square!5e0!3m2!1sen!2sza!4v1745340651262!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div>
-                <h3>Workshop Location:</h3>
-                <h4>Workshop No 09, Malokiba street, Evander,
-                    2385
-                    </h4>
-                    <br><br>
-                <h3>Office Location:</h3>
-                <h4>Cnr16th road and George avenue, Halfway house, Midrand,Johannesburg,0001</h4>
-            </div>
-        </div>
-        </section>
-
-        <!-- Hours Section --> 
-       <!-- <section class="hours-section">
-           
-            <h2 class="hours-title">Hours</h2>
-            
-                <ul id="hoursList">
-                  <li data-day="0">Sun &nbsp;<span class="hours">Closed</span></li>
-                  <li data-day="1">Mon &nbsp;<span class="hours">09:00 am – 05:00 pm</span></li>
-                  <li data-day="2">Tue &nbsp;<span class="hours">09:00 am – 05:00 pm</span></li>
-                  <li data-day="3">Wed &nbsp;<span class="hours">09:00 am – 05:00 pm</span></li>
-                  <li data-day="4">Thu &nbsp;<span class="hours">09:00 am – 05:00 pm</span></li>
-                  <li data-day="5">Fri &nbsp;<span class="hours">09:00 am – 05:00 pm</span></li>
-                  <li data-day="6">Sat &nbsp;<span class="hours">Closed</span></li>
-                </ul>
-                <script>
-                    const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, etc.
-                    const hoursListItems = document.querySelectorAll('#hoursList li');
-                  
-                    hoursListItems.forEach(item => {
-                      if (parseInt(item.dataset.day) === today) {
-                        item.classList.add('today');
-                      }
-                    });
-                  </script>
-        </section> -->
-
-        <!-- Contact Form Section -->
-         <div class="quote-toggle-wrapper">
-    <button id="toggleQuoteBtn" class="quote-toggle-btn">Enquire</button>
-   </div>
-        <section class="contact-form-container hidden" id="contactForm">
-            <p class="form-intro">We love our customers, <br>so feel free to enquire with us.</p>
-            
-            <form class="contact-form" id="contact-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstname" class="form-label">firstname*</label>
-                        <input type="text" id="firstname" name="firstname" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname" class="form-label">lastname*</label>
-                        <input type="text" id="lastname" name="lastname"class="form-input" required>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="company" class="form-label">company*</label>
-                        <input type="text" id="company" name="company" class="form-input" required>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone" class="form-label">phone*</label>
-                        <input type="tel" id="phone" name="phone" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="form-label">email*</label>
-                        <input type="email" id="email" name="email"class="form-input" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="enquiry" class="form-label">enquiry*</label>
-                    <textarea id="enquiry" class="form-input" name="enquiry" required></textarea>
-                </div>
-                
-                <div class="form-actions">
-                    <button type="submit" class="submit-btn">Submit</button>
-                    <button type="reset" class="reset-btn">Reset</button>
-                </div>
-                <span id="form-message" class="form-message"></span>
-                
-            </form>
-           
-        </section>
-        
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-info">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>082 742 1013</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>mineralproptyltd@gmail.com</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Midrand, Johannesburg</span>
     </div>
-        <!-- Footer -->
-        <div class="footer-top">
-            <p class="footer-text"><strong>Phone: </strong><i>0827421013</i><br><strong>Email: </strong><i>mineralproptyltd@gmail.com</i> <br><strong>Locations: </strong><i>Workshop No 09, Malokiba street, Evander,
-                2385</i><br><i>Cnr16th road and George avenue, Halfway house, Midrand,Johannesburg,0001</i></p>           
-                <span class="quote-btn"><a href="products.html">Get Quote Now</a></span>
-        </div>
-        <div class="footer-bottom">
-            <div>
-                <div class="footer-social">
-                    <a href="#"> <img class="social-icon" src="media/n_929237_instagram_icon.png" alt="Instagram"></a>
-                    <a href="#"><img class="social-icon" src="media/n_102573_applications_facebook.png" alt="Facebook"></a>
-                    <a href="#"><img class="social-icon" src="media/n_17725_linkedin_social_icon.png" alt="LinkedIn"></a>
-                    <a href="#"><img class="social-icon" src="media/n_102606_applications_media_so.png"  alt="WhatsApp"></a>
-                    <a href="#"><img class="social-icon" src="media/icons8-pinterest-80.png"  alt="Pinterest icon by Icons8"></a>
-                </div>
-            </div>
-            
-            <p class="copyright">Copyright © 2024 mineralpro.co.za - All Rights Reserved.</p>
+    <div class="topbar-social">
+      <a href="#" class="social-svg-link" aria-label="Instagram"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-instagram"/></svg></a><a href="#" class="social-svg-link" aria-label="Facebook"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-facebook"/></svg></a><a href="#" class="social-svg-link" aria-label="LinkedIn"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-linkedin"/></svg></a><a href="https://wa.me/27827421013" class="social-svg-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-whatsapp"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-logo">
+      <img src="media/Mineral_Logo.png" alt="Mineral Pro Logo" onerror="this.style.display='none'">
+      <div class="navbar-logo-text">
+        <strong>Mineral Pro</strong>
+        <span>Enterprise Pty Ltd</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="products.html">Services</a></li>
+      <li><a href="contactus.html" class="active">Contact</a></li>
+      <li class="nav-cta"><a href="#contactForm" class="btn btn-primary">Request a Quote</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-bg-img" src="media/dion-beetson-oF7hh97lVqA-unspl.png" alt="" onerror="this.style.display='none'">
+  <div class="container">
+    <div class="hero-content">
+      <span class="label">Get in Touch</span>
+      <h1>Talk to an<br>Engineer</h1>
+      <p>Whether you have a specific procurement requirement, need technical advice, or want to explore a partnership — our team is ready to engage. We respond within 24 hours.</p>
+      <div class="hero-actions">
+        <a href="#contactForm" class="btn btn-primary">Send an Enquiry</a>
+        <a href="tel:0827421013" class="btn btn-outline">Call Us Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section" id="contactForm">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info-card">
+        <span class="label">Contact Details</span>
+        <h2>Better Together,<br>Through Business Excellence</h2>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <small>Phone</small>
+            <p><a href="tel:0827421013" style="color:var(--white);">082 742 1013</a></p>
+          </div>
         </div>
 
-        <button id="backToTop" title="Go to top">^</button>
-        <script src="js/mobile.js" defer></script>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <small>Email</small>
+            <p><a href="mailto:mineralproptyltd@gmail.com" style="color:var(--white);">mineralproptyltd@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <small>Head Office</small>
+            <p>Cnr 16th Road &amp; George Avenue<br>Halfway House, Midrand<br>Johannesburg, 0001</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <small>Workshop</small>
+            <p>Workshop No. 09<br>Malokiba Street, Evander, 2385</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <small>Business Hours</small>
+            <p>Monday – Friday: 08:00 – 17:00<br><span style="color:rgba(255,255,255,.45); font-size:.88rem;">Saturday &amp; Sunday: Closed</span></p>
+          </div>
+        </div>
+
+        <div class="social-row">
+          <small>Follow Us</small>
+          <div class="footer-social-links">
+            <a href="#" class="social-svg-link" aria-label="Instagram"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-instagram"/></svg></a>
+            <a href="#" class="social-svg-link" aria-label="Facebook"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-facebook"/></svg></a>
+            <a href="#" class="social-svg-link" aria-label="LinkedIn"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-linkedin"/></svg></a>
+            <a href="https://wa.me/27827421013" class="social-svg-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-whatsapp"/></svg></a>
+            <a href="#" class="social-svg-link" aria-label="Pinterest"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-pinterest"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="form-card">
+        <h3>Send Us an Enquiry</h3>
+        <p>Fill in the form below and our engineering team will be in touch within 24 hours.</p>
+
+        <form id="mpForm" novalidate>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+            <div class="form-group">
+              <label for="fname">First Name *</label>
+              <input class="form-input" type="text" id="fname" name="firstname" placeholder="John" required>
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name *</label>
+              <input class="form-input" type="text" id="lname" name="lastname" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:1.25rem;">
+            <label for="company">Company Name *</label>
+            <input class="form-input" type="text" id="company" name="company" placeholder="Your company" required>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-top:1.25rem;">
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="082 000 0000" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="you@company.com" required>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:1.25rem;">
+            <label for="service">Service Interest</label>
+            <select class="form-input form-select" id="service" name="service">
+              <option value="">— Select a service area —</option>
+              <option>Filtration Systems</option>
+              <option>Conveyor Systems</option>
+              <option>Engineering &amp; Maintenance</option>
+              <option>Electrical &amp; Instrumentation</option>
+              <option>Automation &amp; Smart Systems</option>
+              <option>Digital &amp; Predictive Services</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-top:1.25rem;">
+            <label for="message">Message / Requirements *</label>
+            <textarea class="form-textarea" id="message" name="enquiry" rows="5" placeholder="Describe your requirements, quantities, urgency, or any relevant context…" required></textarea>
+          </div>
+          <div class="form-actions" style="margin-top:1.5rem;">
+            <button type="submit" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Enquiry
+            </button>
+            <button type="reset" class="btn" style="background:var(--grey-light); color:var(--navy); border:1px solid var(--grey-mid);">Clear</button>
+          </div>
+          <div id="formMsg" class="form-message"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-eyebrow"><span class="label">Find Us</span></div>
+      <h2>Our Locations</h2>
+      <p>Two strategic facilities serving clients across South Africa's industrial heartland.</p>
+    </div>
+    <div class="location-grid">
+      <div class="location-card">
+        <div class="location-card-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.0897901662506!2d28.13297089919392!3d-25.965095418054506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956e4a82df7811%3A0xa4511513403b9a0!2sSupa%20Cubed%20%2F%20Alphen%20Square!5e0!3m2!1sen!2sza!4v1745340651262!5m2!1sen!2sza"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Midrand Head Office map" style="border:0;"></iframe>
+        </div>
+        <div class="location-card-body">
+          <span class="label">Head Office</span>
+          <h4>Midrand Headquarters</h4>
+          <p>Cnr 16th Road &amp; George Avenue<br>Halfway House, Midrand, Johannesburg, 0001</p>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card-map" style="display:flex; align-items:center; justify-content:center; background:var(--navy);">
+          <div style="text-align:center; color:rgba(255,255,255,.3);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;margin:0 auto 1rem;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <p style="font-family:var(--font-mono); font-size:.72rem; letter-spacing:.15em; text-transform:uppercase;">Evander, Mpumalanga</p>
+          </div>
+        </div>
+        <div class="location-card-body">
+          <span class="label">Workshop Facility</span>
+          <h4>Delmas Workshop</h4>
+          <p>Workshop No. 09<br>Malokiba Street, Evander, 2385</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="container">
+    <div>
+      <h2>Ready to Start?</h2>
+      <p>Our engineering procurement team is standing by. Contact us today.</p>
+    </div>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="tel:0827421013" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        Call 082 742 1013
+      </a>
+      <a href="mailto:mineralproptyltd@gmail.com" class="btn btn-outline">Send an Email</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="media/Mineral_Logo.png" alt="Mineral Pro" onerror="this.style.display='none'">
+        <p>South Africa's trusted Engineering Supply Specialist and Industrial Procurement Partner.</p>
+        <div class="reg">Reg. No: 2020/772030/07 · Licence: W/2020/0087</div>
+        <div class="footer-social-links">
+          <a href="#" class="social-svg-link" aria-label="Instagram"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-instagram"/></svg></a><a href="#" class="social-svg-link" aria-label="Facebook"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-facebook"/></svg></a><a href="#" class="social-svg-link" aria-label="LinkedIn"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-linkedin"/></svg></a><a href="https://wa.me/27827421013" class="social-svg-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-whatsapp"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="products.html">Services</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="products.html#filtration">Filtration Systems</a></li>
+          <li><a href="products.html#conveyor">Conveyor Systems</a></li>
+          <li><a href="products.html#maintenance">Engineering &amp; Maintenance</a></li>
+          <li><a href="products.html#electrical">Electrical &amp; Instrumentation</a></li>
+          <li><a href="products.html#automation">Automation &amp; Smart Systems</a></li>
+          <li><a href="products.html#digital">Digital &amp; Predictive Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul class="footer-contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg><span>082 742 1013</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>mineralproptyltd@gmail.com</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Cnr 16th Road &amp; George Avenue, Halfway House, Midrand, Johannesburg, 0001</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Mineral Pro Enterprise Pty Ltd — All Rights Reserved.</p>
+      <p>Designed for <a href="https://mineralpro.co.za" target="_blank" rel="noopener noreferrer">mineralpro.co.za</a></p>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script src="js/main.js"></script>
 </body>
 </html>

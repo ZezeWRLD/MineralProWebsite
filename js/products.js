@@ -1,69 +1,54 @@
-function showSlide(sliderId, index) {
-  const container = document.querySelector(`.slider-container[data-slider-id="${sliderId}"]`);
-  const slides = container.querySelectorAll('.slider-img');
-  const dots = container.querySelectorAll('.dot');
+(function () {
+  function setActiveSlide(container, activeIndex) {
+    const slides = container.querySelectorAll('.slider-img');
+    const dots = container.querySelectorAll('.slider-dot');
+    if (!slides.length) return;
+    const i = ((activeIndex % slides.length) + slides.length) % slides.length;
+    slides.forEach((img, idx) => img.classList.toggle('active', idx === i));
+    dots.forEach((dot, idx) => dot.classList.toggle('active', idx === i));
+  }
 
-  slides.forEach((img, i) => {
-    img.classList.toggle('active', i === index);
-  });
+  function initServiceSlider(container) {
+    const slides = container.querySelectorAll('.slider-img');
+    if (!slides.length) return;
 
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
-  });
-}
+    let index = 0;
+    setActiveSlide(container, 0);
 
-function startSlider(sliderId) {
-  const container = document.querySelector(`.slider-container[data-slider-id="${sliderId}"]`);
-  const slides = container.querySelectorAll('.slider-img');
-  let index = 0;
+    container.querySelectorAll('.slider-dot').forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        index = i;
+        setActiveSlide(container, index);
+      });
+    });
 
-  showSlide(sliderId, index); // Show the first slide
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      setActiveSlide(container, index);
+    }, 4500);
+  }
 
-  setInterval(() => {
-    index = (index + 1) % slides.length;
-    showSlide(sliderId, index);
-  }, 3000); // Change every 3 seconds
-}
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.service-slider .slider-container').forEach(initServiceSlider);
 
-// Start sliders on page load
-window.addEventListener('DOMContentLoaded', () => {
-  const sliders = document.querySelectorAll('.slider-container');
-  sliders.forEach(slider => {
-    const id = slider.getAttribute('data-slider-id');
-    startSlider(id);
-  });
-});
-const backToTopBtn = document.getElementById("backToTop");
+    const form = document.getElementById('contact-form');
+    const resetBtn = document.querySelector('.reset-btn');
+    if (form && resetBtn) {
+      resetBtn.addEventListener('click', () => form.reset());
+    }
 
-  // Show button after user scrolls down 100px
-  window.onscroll = function () {
-    backToTopBtn.style.display = window.scrollY > 100 ? "block" : "none";
-  };
-
-  // Scroll smoothly to the top
-  backToTopBtn.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-  
-  const form = document.getElementById('contact-form');
-  const resetBtn = document.querySelector('.reset-btn');
-
-  resetBtn.addEventListener('click', () => {
-    form.reset(); // This is optional since <button type="reset"> does this automatically
-    // You can also reset error messages, highlight borders, etc., here if needed
-  });
-
-  const toggleBtn = document.getElementById('toggleQuoteBtn');
-  const quoteSection = document.getElementById('quote');
-
-  toggleBtn.addEventListener('click', () => {
-    quoteSection.classList.toggle('hidden');
-    toggleBtn.textContent = quoteSection.classList.contains('hidden')
-      ? 'Request a Quote'
-      : 'Close Form';
-
-    // Scroll to form when shown
-    if (!quoteSection.classList.contains('hidden')) {
-      quoteSection.scrollIntoView({ behavior: 'smooth' });
+    const toggleBtn = document.getElementById('toggleQuoteBtn');
+    const quoteSection = document.getElementById('quote');
+    if (toggleBtn && quoteSection) {
+      toggleBtn.addEventListener('click', () => {
+        quoteSection.classList.toggle('hidden');
+        toggleBtn.textContent = quoteSection.classList.contains('hidden')
+          ? 'Request a Quote'
+          : 'Close Form';
+        if (!quoteSection.classList.contains('hidden')) {
+          quoteSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
     }
   });
+})();

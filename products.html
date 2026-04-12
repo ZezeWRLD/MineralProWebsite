@@ -1,327 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mineral Pro - Mining & Industrial Supplies</title>
-    <link rel="stylesheet" href="css/product.css">
-    <link rel="stylesheet" href="css/responsive.css">
-   <script src="js/products.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mineral Pro Enterprise — engineering supply divisions: filtration, conveyors, maintenance, electrical, automation and digital services.">
+  <title>Services | Mineral Pro Enterprise</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    .service-anchor { scroll-margin-top: 100px; }
+    .service-section .split-img { align-self: stretch; }
+    .service-list {
+      margin: 1.25rem 0 0;
+      padding-left: 1.25rem;
+      list-style: disc;
+      color: var(--grey-text);
+    }
+    .service-list li { margin-bottom: .5rem; font-size: .95rem; }
+    .services-toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin-top: 1.5rem;
+    }
+    .services-toc a {
+      display: inline-block;
+      padding: .45rem 1rem;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 6px;
+      font-family: var(--font-head);
+      font-size: .88rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.85);
+      transition: var(--transition);
+    }
+    .services-toc a:hover {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: var(--white);
+    }
+  </style>
 </head>
-<body>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
-         <!-- Header Section -->
-     <header class="header">
-        <img class="header-overlay" src="media/pexels-tiger-lily-4483610.jpg" alt="inventory warehouse">
-        <img class="logo" src="media/Mineral_Logo.png" alt="Mineral Pro Logo">    
-        <nav class="nav-bar" id="mainNav">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="aboutus.html" class="nav-link">About us</a>
-            <a href="#" class="nav-link">Products</a>
-            <a href="contactus.html" class="nav-link">Contact us</a>
-        </nav>
-          <div class="hero-text">
-            <h1>Reliable Mining & Industrial Supplies<br>Built for Tough Conditions.</h1>
+<body class="page-services">
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-info">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>082 742 1013</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>mineralproptyltd@gmail.com</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Midrand, Johannesburg</span>
+    </div>
+    <div class="topbar-social">
+      <a href="#" class="social-svg-link" aria-label="Instagram"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-instagram"/></svg></a>
+      <a href="#" class="social-svg-link" aria-label="Facebook"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-facebook"/></svg></a>
+      <a href="#" class="social-svg-link" aria-label="LinkedIn"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-linkedin"/></svg></a>
+      <a href="https://wa.me/27827421013" class="social-svg-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-whatsapp"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-logo">
+      <img src="media/Mineral_Logo.png" alt="Mineral Pro Logo" onerror="this.style.display='none'">
+      <div class="navbar-logo-text">
+        <strong>Mineral Pro</strong>
+        <span>Enterprise Pty Ltd</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="products.html" class="active">Services</a></li>
+      <li><a href="contactus.html">Contact</a></li>
+      <li class="nav-cta"><a href="contactus.html#contactForm" class="btn btn-primary">Request a Quote</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<section class="hero">
+  <img class="hero-bg-img" src="media/hardware-tools-931466_1280.jpg" alt="" aria-hidden="true" onerror="this.style.display='none'">
+  <div class="container">
+    <div class="hero-content">
+      <span class="label">What We Do</span>
+      <h1>Service<br>Divisions</h1>
+      <p>Specialized procurement and engineering support across filtration, bulk materials handling, plant maintenance, electrical systems, automation and digital services — structured for industrial and mining operations.</p>
+      <div class="hero-actions">
+        <a href="contactus.html#contactForm" class="btn btn-primary">Request a Quote</a>
+        <a href="tel:0827421013" class="btn btn-outline">Call Us</a>
+      </div>
+      <nav class="services-toc" aria-label="Jump to service sections">
+        <a href="#filtration">Filtration</a>
+        <a href="#conveyor">Conveyors</a>
+        <a href="#maintenance">Maintenance</a>
+        <a href="#electrical">Electrical</a>
+        <a href="#automation">Automation</a>
+        <a href="#digital">Digital</a>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<section class="section service-section service-anchor" id="filtration">
+  <div class="container">
+    <div class="split">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow"><span class="label">Division 01</span></div>
+          <h2>Filtration Systems</h2>
+          <p>High-performance filtration components for plants, gas pipelines and industrial fluid systems — sourced for pressure ratings, media compatibility and duty cycles that match your process.</p>
+        </div>
+        <ul class="service-list">
+          <li>Gas line filter elements</li>
+          <li>Cyclone separators and filters</li>
+          <li>High-flow housings and strainers</li>
+        </ul>
+        <a href="contactus.html#contactForm" class="btn btn-navy" style="margin-top:1.75rem;">Enquire about filtration</a>
+      </div>
+      <div class="split-img service-slider">
+        <div class="slider-container">
+          <div class="slider-track">
+            <img class="slider-img active" src="media/Lined-Plug-Valve.png" alt="Industrial valves and filtration equipment" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/oil-2496712_1280.jpg" alt="Industrial filtration and fluid systems" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/Mask_Group_1.png" alt="Plant filtration components" onerror="this.style.display='none'">
           </div>
-    </header>
-    <main>
-        <br><br>
-        <h2 class="section-title"> Mineral Pro Engineering & Industrial Services</h2>
-            <p class="hero-subtitle">
-                From pre-project planning to turnkey execution, Mineral Pro offers integrated 
-                engineering and maintenance services designed to drive operational excellence 
-                and maximum equipment availability.
-            </p>
-        <section id="products" class="product-categories">
-                <h2 class="section-title">Engineering Services</h2>
-                <h3 class="section-titleh3">Pre-Project & Detailed Engineering </h3>
-            <div class="content-card">
-                <div class="card-content">
-                    <ul>
-                        <li>Project Management Office</li>
-                        <li>EPCM (Engineering, Procurement, Construction Management) </li>
-                        <li>Consultation & Technical Resources </li>
-                        <li>Engineering Drafting & Design </li>
-                        <li>Digital Project Tools (scoping, costing, planning, scheduling, commissioning)  </li>
-                    </ul>
-                </div>
-                
-                <div class="slider-container" data-slider-id="1">
-                    <div  class="slider">
-                      <img class="slider-img active" src="media/pexels-energepic-com-27411-110469.jpg" alt="pumps image" />
-                      <img class="slider-img" src="media/pexels-ketut-subiyanto-4623501.jpg" alt="motor image"/>
-                      <img class="slider-img" src="media/pexels-magda-ehlers-pexels-2569839.jpg" alt="valves image"/>
-                    </div>
-              
-                    <div class="dots">
-                        <button class="dot" onclick="goToSlide(0)">.</button>
-                        <button class="dot" onclick="goToSlide(1)">.</button>
-                        <button class="dot" onclick="goToSlide(2)">.</button>
-                      </div>
-               </div>
-              
-           </div>
-           <br><br><br>
-           <h3 class="section-titleh3">Installation Services</h3>
-                <div class="content-card">
-                    <div class="slider-container" data-slider-id="2">
-                        <div class="slider">
-                          <img class="slider-img active" src="media/ehmitrich-ZGY5Pp8Xxaw-unsplash.jpg" alt="pumps image" />
-                          <img class="slider-img" src="media/pexels-jerome031-5325460.jpg" alt="motor image"/>
-                          <img class="slider-img" src="media/pexels-sejio402-27354189.jpg" alt="valves image"/>
-                        </div>
-                  
-                        <div class="dots">
-                            <button class="dot" onclick="goToSlide(0)">.</button>
-                            <button class="dot" onclick="goToSlide(1)">.</button>
-                            <button class="dot" onclick="goToSlide(2)">.</button>
-                          </div>
-                   </div>
+          <div class="slider-dots">
+            <button type="button" class="slider-dot active" aria-label="Filtration image 1"></button>
+            <button type="button" class="slider-dot" aria-label="Filtration image 2"></button>
+            <button type="button" class="slider-dot" aria-label="Filtration image 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <div class="card-content">
-                        <ul>
-                            <li>Piping Systems</li>
-                            <li>Boiler Making</li>
-                            <li>Steel Structures</li>
-                            <li>Civil Works</li>
-                            <li>Electrical & Instrumentation Systems</li>
-                        </ul>
-                    </div>    
-                            
-               </div>
-               <br><br><br>
-               <h2 class="section-title">Operational & Maintenance Engineering</h2>
-               <h3 class="section-titleh3">Maintenance Services</h3>
-                <div class="content-card">
-                    <div class="card-content">
-                        <ul>
-                            <li>Full-time site teams</li>
-                            <li>Multi-site and turnaround services</li>
-                            <li>Shutdowns, GOs, multi-service contracts</li>
-                            <li>Conveyor belt cleaning and servicing</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="slider-container" data-slider-id="3">
-                        <div  class="slider">
-                          <img class="slider-img active" src="media/pexels-trinh-tr-n-191284110-14614016.jpg" alt="pumps image" /> /
-                          <img class="slider-img" src="media/ehmitrich-Jt01DmHeiqM-unsplash.jpg" alt="motor image"/>
-                          <img class="slider-img" src="media/pexels-marianna-zuzanna-498248397-16442684.jpg" alt="valves image"/>
-                        </div>
-                  
-                        <div class="dots">
-                            <button class="dot" onclick="goToSlide(0)">.</button>
-                            <button class="dot" onclick="goToSlide(1)">.</button>
-                            <button class="dot" onclick="goToSlide(2)">.</button>
-                          </div>
-                   </div>
-                   
-               </div>
-               <br><br><br>
-               <h3 class="section-titleh3">Skills & Resource Supply</h3>
-                <div class="content-card">
-                                       
-                    <div class="slider-container" data-slider-id="4">
-                        <div  class="slider">
-                          <img class="slider-img active" src="media/pexels-bijoubaby-5248733.jpg" alt="pumps image" />
-                          <img class="slider-img" src="media/pexels-greece-china-news-81838757-12956302.jpg" alt="motor image"/>
-                          <img class="slider-img" src="media/pexels-ninobur-14857166.jpg" alt="valves image"/>
-                          <img class="slider-img" src="media/pexels-annaszakaria-10871621.jpg" alt="valves image"/>
-                        </div>
-                  
-                        <div class="dots">
-                            <button class="dot" onclick="goToSlide(0)">.</button>
-                            <button class="dot" onclick="goToSlide(1)">.</button>
-                            <button class="dot" onclick="goToSlide(2)">.</button>
-                          </div>
-                   </div>
-                    <div class="card-content">
-                        <ul>
-                            <li>Mechanical Technicians</li>
-                            <li>Electrical & Instrumentation Crews</li>
-                            <li>HP Cleaning</li>
-                            <li>Rigging & Lifting</li>
-                            <li>AIP Compliance Personnel</li>
-                        </ul>
-                    </div>
-                    
-               </div>
-               <br><br><br>
-               <h2 class="section-title">Material & Equipment Supply</h2>
-               <h3 class="section-titleh3">Mechanical & Electrical Components</h3>
-                <div class="content-card">
-                    <div class="card-content">
-                        <ul>
-                            <li>Mechanical Spares, Flanges, Spools, Gearboxes, Pumps, Valves, Steel, Gaskets</li>
-                            <li>Electrical Cables & Controls</li>
-                            <li>Hydraulic Equipment & Hoses</li>
-                            
-                        </ul>
-                    </div>
-                    
-                    <div class="slider-container" data-slider-id="5">
-                        <div class="slider">
-                          <img class="slider-img active" src="media/motor-7903404_1280.jpg" alt="pumps image" />
-                          <img class="slider-img" src="media/OIP (9).jpeg" alt="motor image"/>
-                          <img class="slider-img" src="media/90-Hydraulic-Hose.jpg" alt="valves image"/>
-                          <img class="slider-img" src="media/hardware-tools-931466_1280.jpg" alt="valves image"/>
-                        </div>
-                  
-                        <div class="dots">
-                            <button class="dot" onclick="goToSlide(0)">.</button>
-                            <button class="dot" onclick="goToSlide(1)">.</button>
-                            <button class="dot" onclick="goToSlide(2)">.</button>
-                          </div>
-                   </div>
-                  
-               </div>
-               <br><br><br>
-               <h3 class="section-titleh3">Lubricants, Oils & Fuels</h3>
-               <div class="content-card">
-                                   
-                <div class="slider-container" data-slider-id="6">
-                    <div  class="slider">
-                      <img class="slider-img active" src="media/refuel-3688264_1280.jpg" alt="pumps image" />
-                      <img class="slider-img" src="media/industrial-2716236_1280.jpg" alt="motor image"/>
-                      <img class="slider-img" src="media/oil-2496712_1280.jpg" alt="valves image"/>
-                    </div>
-              
-                    <div class="dots">
-                        <button class="dot" onclick="goToSlide(0)">.</button>
-                        <button class="dot" onclick="goToSlide(1)">.</button>
-                        <button class="dot" onclick="goToSlide(2)">.</button>
-                      </div>
-               </div>
-                   <div class="card-content">
-                       <ul>
-                           <li>Lubricants & Industrial Oils</li>
-                           <li>Aviation Fuel</li>
-                           <li>Wholesale Petroleum Products</li>
-                       </ul>
-                   </div>
-                
-              </div>
-              <br><br><br>
-              <h3 class="section-titleh3">Mining & Conveyor Equipment</h3>
-                <div class="content-card">
-                    <div class="card-content">
-                        <ul>
-                            <li>Conveyor Belts (Various Sizes)</li>
-                            <li>Guide Rollers, Belt Pulleys</li>
-                            <li>Conveyor Guards & Structures</li>
-                            <li>Drills, Bits, Roof Bolts, Welded Mesh</li>
-                            <li>Above/Underground Materials Handling</li>
-                            <li>Tools & Machinery</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="slider-container" data-slider-id="7">
-                        <div class="slider">
-                          <img class="slider-img active" src="media/pexels-mikebirdy-190574.jpg" alt="pumps image" />
-                          <img class="slider-img" src="media/OIP (6).jpeg" alt="motor image"/>
-                          <img class="slider-img" src="media/OIP (7).jpeg" alt="valves image"/>
-                          <img class="slider-img" src="media/Conveyor-Guards.webp" alt="valves image"/>
-                        </div>
-                  
-                        <div class="dots">
-                            <button class="dot" onclick="goToSlide(0)">.</button>
-                            <button class="dot" onclick="goToSlide(1)">.</button>
-                            <button class="dot" onclick="goToSlide(2)">.</button>
-                          </div>
-                   </div>
-                 
-               </div>
-               
-        </section>
-        <div class="quote-toggle-wrapper">
-    <button id="toggleQuoteBtn" class="quote-toggle-btn">Request a Quote</button>
-   </div>
-        <section id="quote" class="quote-form hidden">
-            <div class="form-intro">
-                <h2>Want a custom quote?</h2>
-                <p>Reach out to us<br>Our Catalog has something for everyone</p>
-            </div>
-            
-            <form class="contact-form" id="contact-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstname">First Name*</label>
-                        <input type="text" id="firstname" name="firstname" required class="form-input">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="lastname">Last Name*</label>
-                        <input type="text" id="lastname" name="lastname" required class="form-input">
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">Phone*</label>
-                        <input type="tel" id="phone" name="phone" required class="form-input">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email*</label>
-                        <input type="email" id="email" name="email" required class="form-input">
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="company">Company*</label>
-                        <input type="text" id="company" name="company" required class="form-input">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="selectquote">Select Quote*</label>
-                        <select id="selectquote" name="selectquote" required class="form-input">
-                            <option value="" disabled selected>-- Please choose an option --</option>
-                            <option value="Pre-Project & Detailed Engineering">Pre-Project & Detailed Engineering</option>
-                            <option value="Installation Services">Installation Services</option>
-                            <option value="Maintenance Services">Maintenance Services</option>
-                            <option value="Skills & Resource Supply">Skills & Resource Supply</option>
-                            <option value="Mechanical & Electrical Components">Mechanical & Electrical Components</option>
-                            <option value="Lubricants, Oils & Fuels">Lubricants, Oils & Fuels</option>
-                            <option value="Mining & Conveyor Equipment">Mining & Conveyor Equipment</option>
-                            <!-- Options would go here -->
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-group full-width">
-                    <label for="message">Message*</label>
-                    <textarea id="message" name="message" required ></textarea>
-                </div>
-                
-                <div class="form-actions">
-                    <button type="submit" class="submit-btn">Submit</button>
-                    <button type="reset" class="reset-btn">Reset</button>
-                </div>
-            </form>
-        </section>
-    </main>
+<section class="section section-dark service-section service-anchor" id="conveyor">
+  <div class="container">
+    <div class="split reverse">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow"><span class="label">Division 02</span></div>
+          <h2>Conveyor Systems</h2>
+          <p>End-to-end bulk materials handling support for surface and underground mining — belts, components and fabricated structures aligned to your duty and safety standards.</p>
+        </div>
+        <ul class="service-list">
+          <li>Conveyor belts (all sizes)</li>
+          <li>Guide rollers and pulleys</li>
+          <li>Structural fabrication and guards</li>
+        </ul>
+        <a href="contactus.html#contactForm" class="btn btn-primary" style="margin-top:1.75rem;">Enquire about conveyors</a>
+      </div>
+      <div class="split-img service-slider">
+        <div class="slider-container">
+          <div class="slider-track">
+            <img class="slider-img active" src="media/conveyorbelt.png" alt="Heavy-duty conveyor belt" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/Conveyor-Guards.webp" alt="Conveyor guards and safety structures" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/Image_6.png" alt="Bulk materials handling" onerror="this.style.display='none'">
+          </div>
+          <div class="slider-dots">
+            <button type="button" class="slider-dot active" aria-label="Conveyor image 1"></button>
+            <button type="button" class="slider-dot" aria-label="Conveyor image 2"></button>
+            <button type="button" class="slider-dot" aria-label="Conveyor image 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="footer-top">
-        <p class="footer-text"><strong>Phone: </strong><i>0827421013</i><br><strong>Email: </strong><i>mineralproptyltd@gmail.com</i> <br><strong>Locations: </strong><i>Workshop No 09, Malokiba street, Evander,
-            2385</i><br><i>Cnr16th road and George avenue, Halfway house, Midrand,Johannesburg,0001</i></p>
-            <span class="quote-btn"><a href="products.html">Get Quote Now</a></span>
+<section class="section service-section service-anchor" id="maintenance">
+  <div class="container">
+    <div class="split">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow"><span class="label">Division 03</span></div>
+          <h2>Engineering &amp; Maintenance</h2>
+          <p>Holistic mechanical plant maintenance and project support — spare parts, rotating equipment and piping to maximise asset uptime.</p>
+        </div>
+        <ul class="service-list">
+          <li>Spare parts and piping supply</li>
+          <li>Valves, pumps and gearboxes</li>
+          <li>Plant maintenance support</li>
+        </ul>
+        <a href="contactus.html#contactForm" class="btn btn-navy" style="margin-top:1.75rem;">Enquire about maintenance</a>
+      </div>
+      <div class="split-img service-slider">
+        <div class="slider-container">
+          <div class="slider-track">
+            <img class="slider-img active" src="media/ehmitrich-Jt01DmHeiqM-unsplash.jpg" alt="Engineering and plant maintenance" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/hardware-tools-931466_1280.jpg" alt="Maintenance tools and hardware" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/industrial-2716236_1280.jpg" alt="Industrial plant operations" onerror="this.style.display='none'">
+          </div>
+          <div class="slider-dots">
+            <button type="button" class="slider-dot active" aria-label="Maintenance image 1"></button>
+            <button type="button" class="slider-dot" aria-label="Maintenance image 2"></button>
+            <button type="button" class="slider-dot" aria-label="Maintenance image 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark service-section service-anchor" id="electrical">
+  <div class="container">
+    <div class="split reverse">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow"><span class="label">Division 04</span></div>
+          <h2>Electrical &amp; Instrumentation</h2>
+          <p>Supply of motors, transmitters, transformers, control panels, cables and hydraulic equipment for industrial control and power distribution.</p>
+        </div>
+        <ul class="service-list">
+          <li>Motors and transformers</li>
+          <li>Control panels and cables</li>
+          <li>Hydraulic equipment</li>
+        </ul>
+        <a href="contactus.html#contactForm" class="btn btn-primary" style="margin-top:1.75rem;">Enquire about electrical</a>
+      </div>
+      <div class="split-img service-slider">
+        <div class="slider-container">
+          <div class="slider-track">
+            <img class="slider-img active" src="media/motor-7903404_1280.jpg" alt="Industrial electric motor" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/90-Hydraulic-Hose.jpg" alt="Hydraulic and instrumentation equipment" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/pexels-energepic-com-27411-110469.jpg" alt="Electrical power and control" onerror="this.style.display='none'">
+          </div>
+          <div class="slider-dots">
+            <button type="button" class="slider-dot active" aria-label="Electrical image 1"></button>
+            <button type="button" class="slider-dot" aria-label="Electrical image 2"></button>
+            <button type="button" class="slider-dot" aria-label="Electrical image 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section service-section service-anchor" id="automation">
+  <div class="container">
+    <div class="split">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow"><span class="label">Division 05</span></div>
+          <h2>Automation &amp; Smart Systems</h2>
+          <p>Automated storage, retrieval systems and AGVs — procurement and integration support for modern industrial and logistics operations.</p>
+        </div>
+        <ul class="service-list">
+          <li>AS/RS systems</li>
+          <li>Automated guided vehicles</li>
+          <li>Micro-fulfilment centres</li>
+        </ul>
+        <a href="contactus.html#contactForm" class="btn btn-navy" style="margin-top:1.75rem;">Enquire about automation</a>
+      </div>
+      <div class="split-img service-slider">
+        <div class="slider-container">
+          <div class="slider-track">
+            <img class="slider-img active" src="media/pexels-pixabay-209230.png" alt="Automation and control systems" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/Mask_Group_2.png" alt="Smart industrial systems" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/Image_9.png" alt="Automated operations" onerror="this.style.display='none'">
+          </div>
+          <div class="slider-dots">
+            <button type="button" class="slider-dot active" aria-label="Automation image 1"></button>
+            <button type="button" class="slider-dot" aria-label="Automation image 2"></button>
+            <button type="button" class="slider-dot" aria-label="Automation image 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark service-section service-anchor" id="digital">
+  <div class="container">
+    <div class="split reverse">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow"><span class="label">Division 06</span></div>
+          <h2>Digital &amp; Predictive Services</h2>
+          <p>Technical support layered with predictive analytics and data-driven maintenance — aimed at reducing unplanned downtime and optimising spare parts lifecycle.</p>
+        </div>
+        <ul class="service-list">
+          <li>24/7 expert access</li>
+          <li>Predictive maintenance insights</li>
+          <li>Spare parts lifecycle support</li>
+        </ul>
+        <a href="contactus.html#contactForm" class="btn btn-primary" style="margin-top:1.75rem;">Enquire about digital services</a>
+      </div>
+      <div class="split-img service-slider">
+        <div class="slider-container">
+          <div class="slider-track">
+            <img class="slider-img active" src="media/alpha-perspective-Pw5jK6yjJR4-.png" alt="Digital operations and analytics" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/Screenshot_2025-01-30_094732.png" alt="Data and monitoring" onerror="this.style.display='none'">
+            <img class="slider-img" src="media/pexels-cdc-library-3993241.png" alt="Predictive and digital services" onerror="this.style.display='none'">
+          </div>
+          <div class="slider-dots">
+            <button type="button" class="slider-dot active" aria-label="Digital services image 1"></button>
+            <button type="button" class="slider-dot" aria-label="Digital services image 2"></button>
+            <button type="button" class="slider-dot" aria-label="Digital services image 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="container">
+    <div>
+      <h2>Need a Technical Quote?</h2>
+      <p>Tell us your scope, quantities and timelines — we respond within 24 hours.</p>
+    </div>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="contactus.html#contactForm" class="btn btn-primary">Contact Us</a>
+      <a href="tel:0827421013" class="btn btn-outline">Call 082 742 1013</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="media/Mineral_Logo.png" alt="Mineral Pro" onerror="this.style.display='none'">
+        <p>South Africa's trusted Engineering Supply Specialist and Industrial Procurement Partner.</p>
+        <div class="reg">Reg. No: 2020/772030/07 · Licence: W/2020/0087</div>
+        <div class="footer-social-links">
+          <a href="#" class="social-svg-link" aria-label="Instagram"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-instagram"/></svg></a>
+          <a href="#" class="social-svg-link" aria-label="Facebook"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-facebook"/></svg></a>
+          <a href="#" class="social-svg-link" aria-label="LinkedIn"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-linkedin"/></svg></a>
+          <a href="https://wa.me/27827421013" class="social-svg-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-whatsapp"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="products.html">Services</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="products.html#filtration">Filtration Systems</a></li>
+          <li><a href="products.html#conveyor">Conveyor Systems</a></li>
+          <li><a href="products.html#maintenance">Engineering &amp; Maintenance</a></li>
+          <li><a href="products.html#electrical">Electrical &amp; Instrumentation</a></li>
+          <li><a href="products.html#automation">Automation &amp; Smart Systems</a></li>
+          <li><a href="products.html#digital">Digital &amp; Predictive Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul class="footer-contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg><span>082 742 1013</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>mineralproptyltd@gmail.com</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Cnr 16th Road &amp; George Avenue, Halfway House, Midrand, Johannesburg, 0001</span></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
-        <div>
-            <div class="footer-social">
-                <a href="#"> <img class="social-icon" src="media/n_929237_instagram_icon.png" alt="Instagram"></a>
-                <a href="#"><img class="social-icon" src="media/n_102573_applications_facebook.png" alt="Facebook"></a>
-                <a href="#"><img class="social-icon" src="media/n_17725_linkedin_social_icon.png" alt="LinkedIn"></a>
-                <a href="#"><img class="social-icon" src="media/n_102606_applications_media_so.png"  alt="WhatsApp"></a>
-                <a href="#"><img class="social-icon" src="media/icons8-pinterest-80.png"  alt="Pinterest icon by Icons8"></a>
-            </div>
-        </div>
-        
-        <p class="copyright">Copyright © 2024 mineralpro.co.za - All Rights Reserved.</p>
+      <p>© 2024 Mineral Pro Enterprise Pty Ltd — All Rights Reserved.</p>
+      <p>Designed for <a href="https://mineralpro.co.za" target="_blank" rel="noopener noreferrer">mineralpro.co.za</a></p>
     </div>
-    <button id="backToTop" title="Go to top">^</button>
-    <script src="js/mobile.js" defer></script>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script src="js/main.js"></script>
+<script src="js/products.js"></script>
 </body>
 </html>
