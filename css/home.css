@@ -1,74 +1,105 @@
-/* ── HOME PAGE SPECIFIC ── */
+/* ── HOME PAGE SPECIFIC ────────────────────────────────────
+   Supplements main.css for index.html only.
+   All variables come from main.css :root.
+   ──────────────────────────────────────────────────────── */
 
 .home-hero { min-height: 640px; }
 
-/* Services grid — 3 cols on desktop */
+/* ── SERVICES GRID ───────────────────────────────────────── */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
+/* Equal-height cards in grid rows */
+.services-grid .service-card {
+  display: flex;
+  flex-direction: column;
+}
+.services-grid .service-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.services-grid .service-card-body p { flex: 1; }
 
-/* Why grid */
-.why-grid { display: grid; gap: 1.5rem; margin-top: 1rem; }
+/* ── WHY CHOOSE US ───────────────────────────────────────── */
+.why-grid { display: grid; gap: 1.25rem; margin-top: 1rem; }
 .why-item {
   display: flex;
   gap: 1.2rem;
   align-items: flex-start;
-  padding: 1.25rem;
+  padding: 1.25rem 1.5rem;
   border-radius: var(--radius);
   border: 1px solid var(--grey-mid);
+  background: var(--white);
   transition: var(--transition);
 }
-.why-item:hover { border-color: var(--teal); background: rgba(0,180,160,.03); }
+.why-item:hover {
+  border-color: var(--teal);
+  background: rgba(0,180,160,.03);
+  box-shadow: 0 4px 20px rgba(0,180,160,.08);
+  transform: translateX(4px);
+}
 .why-icon {
   width: 44px; height: 44px;
   background: var(--teal-glow);
   border-radius: 8px;
   display: grid; place-items: center;
   flex-shrink: 0;
+  transition: background var(--transition);
 }
+.why-item:hover .why-icon { background: rgba(0,180,160,.28); }
 .why-icon svg { width: 22px; height: 22px; color: var(--teal); }
-.why-item h4 { color: var(--navy); margin-bottom: .3rem; }
-.why-item p  { font-size: .88rem; }
+.why-item h4 { color: var(--navy); margin-bottom: .3rem; font-size: 1rem; }
+.why-item p  { font-size: .88rem; margin: 0; }
 
-/* Partners marquee */
+/* ── PARTNERS MARQUEE ────────────────────────────────────── */
 .partners-track-wrap {
   overflow: hidden;
   position: relative;
-  padding: 1.5rem 0;
+  padding: 1.75rem 0;
   border-top: 1px solid var(--grey-mid);
   border-bottom: 1px solid var(--grey-mid);
+}
+.partners-track-wrap:hover .partners-track {
+  animation-play-state: paused;
 }
 .partners-track-wrap::before,
 .partners-track-wrap::after {
   content: '';
   position: absolute; top: 0; bottom: 0;
-  width: 100px;
-  z-index: 2;
+  width: 120px; z-index: 2;
+  pointer-events: none;
 }
-.partners-track-wrap::before { left: 0; background: linear-gradient(to right, var(--white), transparent); }
-.partners-track-wrap::after  { right: 0; background: linear-gradient(to left,  var(--white), transparent); }
+.partners-track-wrap::before { left: 0; background: linear-gradient(to right, var(--white) 20%, transparent); }
+.partners-track-wrap::after  { right: 0; background: linear-gradient(to left,  var(--white) 20%, transparent); }
+
 .partners-track {
   display: flex;
   align-items: center;
-  gap: 3.5rem;
+  gap: 4rem;
   width: max-content;
-  animation: marquee 35s linear infinite;
+  animation: marquee 38s linear infinite;
 }
 .partners-track img {
-  height: 48px;
-  width: auto;
+  height: 44px; width: auto;
   object-fit: contain;
-  opacity: 1;
-  filter: none;
+  flex-shrink: 0;
   transition: var(--transition);
 }
-.partners-track img:hover { opacity: 0.92; transform: scale(1.03); }
+.partners-track img:hover { opacity: .85; transform: scale(1.05); }
+
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-@media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 640px)  { .services-grid { grid-template-columns: 1fr; } }
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .partners-track-wrap::before,
+  .partners-track-wrap::after { width: 60px; }
+}

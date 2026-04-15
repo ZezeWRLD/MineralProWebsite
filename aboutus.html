@@ -104,6 +104,104 @@
       flex-shrink: 0;
       margin-top: .05rem;
     }
+
+    /* Mission / Vision grid */
+    .mv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    .mv-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      transition: var(--transition);
+    }
+    .mv-card:hover { border-color: rgba(255,255,255,.22); }
+    .mv-card--teal {
+      background: rgba(0,180,160,.06);
+      border-color: rgba(0,180,160,.25);
+    }
+    .mv-card--teal:hover { border-color: var(--teal); }
+    .mv-card h3 { color: var(--white); font-size: 1.6rem; margin: .6rem 0 .85rem; }
+    .mv-card p  { color: rgba(255,255,255,.55); }
+
+    /* Infrastructure grid */
+    .infra-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      background: var(--navy);
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+    }
+
+    /* Team grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Licensing highlight block */
+    .licensing-highlight {
+      max-width: 900px;
+      margin: 2rem auto 0;
+      background: rgba(0,180,160,.08);
+      border: 1px solid rgba(0,180,160,.28);
+      border-radius: var(--radius);
+      padding: 1.75rem 2rem;
+    }
+    .licensing-highlight h3 { color: var(--white); margin: .5rem 0 .75rem; }
+    .licensing-highlight p  { margin: 0; color: rgba(255,255,255,.72); }
+
+    /* Partner cards */
+    .partner-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .partner-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      min-height: 170px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: var(--transition);
+    }
+    .partner-card:hover {
+      border-color: rgba(0,180,160,.35);
+      background: rgba(0,180,160,.04);
+    }
+    .partner-card-logo {
+      height: 64px;
+      border: 1px dashed rgba(255,255,255,.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.38);
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .partner-card h4 { color: var(--white); margin: .4rem 0 .25rem; }
+    .partner-card p  { margin: 0; color: rgba(255,255,255,.6); font-size: .88rem; }
+
+    /* Responsive overrides for this page */
+    @media (max-width: 768px) {
+      .mv-grid { grid-template-columns: 1fr; }
+      .infra-grid { padding: 1.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -222,18 +320,17 @@
       <h2>Our Direction</h2>
       <p>Clear purpose, measurable outcomes, and a commitment to excellence in every engagement.</p>
     </div>
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:2rem; margin-bottom:4rem;">
-      <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); padding:2.5rem;">
+    <div class="mv-grid">
+      <div class="mv-card">
         <span class="label">Vision</span>
-        <h3 style="color:var(--white); font-size:1.6rem; margin-bottom:1rem;">To be the reliable and trusted brand through business excellence.</h3>
-        <p style="color:rgba(255,255,255,.55);">Building a legacy of trust and consistency in South Africa's industrial sector and beyond.</p>
+        <h3>To be the reliable and trusted brand through business excellence.</h3>
+        <p>Building a legacy of trust and consistency in South Africa's industrial sector and beyond.</p>
       </div>
-
-<div style="background:rgba(0,180,160,.06); border:1px solid rgba(0,180,160,.25); border-radius:var(--radius); padding:2.5rem;">
-      <span class="label">Mission</span>
-      <h3 style="color:var(--white); font-size:1.6rem; margin-bottom:1rem;">In South Africa and across the global engineering industry.</h3>
-      <p style="color:rgba(255,255,255,.55);">Delivering a wide range of world-renowned brands to meet the needs of our industrial clients.</p>
-</div>
+      <div class="mv-card mv-card--teal">
+        <span class="label">Mission</span>
+        <h3>In South Africa and across the global engineering industry.</h3>
+        <p>Delivering a wide range of world-renowned brands to meet the needs of our industrial clients.</p>
+      </div>
     </div>
 
     <!-- Strategic Objectives -->
@@ -284,7 +381,7 @@
       <h2>Infrastructure &amp; Value-Add</h2>
       <p>Mineral Pro provides more than procurement — we provide a physical foundation for industrial operations and global partner expansion into Africa.</p>
     </div>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:2rem; background:var(--navy); padding:2.5rem; border-radius:var(--radius-lg);">
+    <div class="infra-grid">
 
 <div class="infra-card">
       <span class="label">Workshop</span>
@@ -341,7 +438,7 @@
       <h2>Leadership Team</h2>
       <p>Experienced professionals dedicated to delivering exceptional service and solutions tailored to each client's unique industrial challenges.</p>
     </div>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap:1.5rem;">
+    <div class="team-grid">
       <div class="team-card">
         <div class="team-avatar">SS</div>
         <div>
@@ -372,7 +469,7 @@
       <h2>Certifications &amp; Standards</h2>
       <p>International standards. Local presence. We are committed to full compliance across quality, safety, environmental, and asset management domains.</p>
     </div>
-    <div class="cert-table-wrap" style="max-width:900px; margin: 0 auto 3rem;">
+    <div class="cert-table-wrap max-w-900 mx-auto mb-3">
       <table class="cert-table">
         <thead>
           <tr><th>Standard</th><th>Focus Area</th><th>Status</th></tr>
@@ -385,18 +482,49 @@
         </tbody>
       </table>
     </div>
-    <div style="display:flex; flex-wrap:wrap; gap:.75rem; justify-content:center;">
-      <span class="value-pill">B-BBEE Compliant</span>
-      <span class="value-pill">100% Black Female-Owned</span>
-      <span class="value-pill">Import &amp; Export Licensed</span>
-      <span class="value-pill">Reg. 2020/772030/07</span>
-      <span class="value-pill">Licence No. W/2020/0087</span>
+    <div class="compliance-section">
+      <div class="compliance-pills mx-auto">
+        <span class="value-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          B-BBEE Compliant
+        </span>
+        <span class="value-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          100% Black Female-Owned
+        </span>
+        <span class="value-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Import &amp; Export Licensed
+        </span>
+        <span class="value-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Reg. 2020/772030/07
+        </span>
+        <span class="value-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Licence No. W/2020/0087
+        </span>
+      </div>
     </div>
-    <!-- Change: add highlighted licensing block -->
-    <div style="max-width:900px; margin:2rem auto 0; background:rgba(0,180,160,.08); border:1px solid rgba(0,180,160,.28); border-radius:var(--radius); padding:1.5rem 1.75rem;">
-      <span class="label">Licensing</span>
-      <h3 style="color:var(--white); margin:.5rem 0 1rem;">Import &amp; Export Licensing</h3>
-      <p style="margin:0; color:rgba(255,255,255,.72);">Highlighted compliance block for import and export licensing support, aligned with Mineral Pro's international sourcing model.</p>
+    <div class="licensing-highlight-enhanced">
+      <div class="license-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <span class="label">International Licensing</span>
+        <h3>Import &amp; Export Certification</h3>
+        <p>Mineral Pro holds certified import and export licences, enabling streamlined global sourcing from leading international manufacturers. This certification is a key competitive differentiator in South Africa's engineering procurement landscape, providing clients with access to world-class materials and technical solutions.</p>
+        <div class="license-details">
+          <div class="detail-item">
+            <span class="detail-label">Registration</span>
+            <span class="detail-value">2020/772030/07</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Licence Number</span>
+            <span class="detail-value">W/2020/0087</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -425,7 +553,7 @@
           <li>Deep understanding of South African industrial operating challenges</li>
           <li>Specialist labour pool ready to deploy at client sites nationwide</li>
         </ul>
-        <a href="contactus.html" class="btn btn-primary" style="margin-top:2rem;">
+        <a href="contactus.html" class="btn btn-primary mt-2">
           Partner With Us
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -439,42 +567,62 @@
   <div class="container">
     <div class="section-header centered">
       <div class="section-eyebrow"><span class="label">Our Network</span></div>
-      <h2>Our Partners</h2>
+      <h2>Strategic Partners &amp; Clients</h2>
+      <p>We collaborate with leading regional and global industrial brands to deliver world-class materials and technical solutions across Africa.</p>
     </div>
-    <!-- Change: replace unverified partner logos with placeholder cards that support future logos -->
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1.25rem; margin-top:2rem;">
-      <article style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); min-height:170px; padding:1.5rem; display:flex; flex-direction:column; justify-content:space-between;">
-        <div style="height:64px; border:1px dashed rgba(255,255,255,.2); border-radius:12px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.38); font-family:var(--font-mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;">Future Logo</div>
-        <div>
-          <span class="label">Global Partner</span>
-          <h4 style="margin:.5rem 0 .25rem;">Transnet</h4>
-          <p style="margin:0; color:rgba(255,255,255,.6);">Placeholder partner card for future logo and verified relationship details.</p>
-        </div>
-      </article>
-      <article style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); min-height:170px; padding:1.5rem; display:flex; flex-direction:column; justify-content:space-between;">
-        <div style="height:64px; border:1px dashed rgba(255,255,255,.2); border-radius:12px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.38); font-family:var(--font-mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;">Future Logo</div>
-        <div>
-          <span class="label">Global Partner</span>
-          <h4 style="margin:.5rem 0 .25rem;">Spanish Economic Chamber</h4>
-          <p style="margin:0; color:rgba(255,255,255,.6);">Placeholder partner card for future logo and verified relationship details.</p>
-        </div>
-      </article>
-      <article style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); min-height:170px; padding:1.5rem; display:flex; flex-direction:column; justify-content:space-between;">
-        <div style="height:64px; border:1px dashed rgba(255,255,255,.2); border-radius:12px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.38); font-family:var(--font-mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;">Future Logo</div>
-        <div>
-          <span class="label">Global Partner</span>
-          <h4 style="margin:.5rem 0 .25rem;">Global Partner Placeholder 03</h4>
-          <p style="margin:0; color:rgba(255,255,255,.6);">Reserved card for future verified partner branding.</p>
-        </div>
-      </article>
-      <article style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); min-height:170px; padding:1.5rem; display:flex; flex-direction:column; justify-content:space-between;">
-        <div style="height:64px; border:1px dashed rgba(255,255,255,.2); border-radius:12px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.38); font-family:var(--font-mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;">Future Logo</div>
-        <div>
-          <span class="label">Global Partner</span>
-          <h4 style="margin:.5rem 0 .25rem;">Global Partner Placeholder 04</h4>
-          <p style="margin:0; color:rgba(255,255,255,.6);">Reserved card for future verified partner branding.</p>
-        </div>
-      </article>
+    <!-- Partners Grid -->
+    <div class="partners-grid-enhanced">
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture1.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture2.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture3.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture4.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture5.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture6.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture7.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture8.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture9.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture10.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture11.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture12.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture13.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture14.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture15.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture16.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
+      <div class="partner-logo-card">
+        <img src="media/partners/Picture17.png" alt="Strategic Partner" onerror="this.style.display='none'">
+      </div>
     </div>
   </div>
 </section>
@@ -503,7 +651,7 @@
       <h2>Let's Build Something Together</h2>
       <p>Looking for a reliable engineering supply partner? Our team is ready to engage.</p>
     </div>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+    <div class="flex flex-wrap gap-1">
       <a href="contactus.html" class="btn btn-primary">Get in Touch</a>
       <a href="products.html" class="btn btn-outline">Our Services</a>
     </div>
@@ -572,5 +720,6 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 <script src="js/main.js"></script>
+<script src="js/products.js"></script>
 </body>
 </html>

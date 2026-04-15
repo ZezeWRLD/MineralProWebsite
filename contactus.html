@@ -84,7 +84,7 @@
 
     .location-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
@@ -185,7 +185,7 @@
           </div>
           <div class="contact-detail-text">
             <small>Phone</small>
-            <p><a href="tel:0827421013" style="color:var(--white);">082 742 1013</a></p>
+            <p><a href="tel:0827421013" class="link-white">082 742 1013</a></p>
           </div>
         </div>
 
@@ -195,7 +195,7 @@
           </div>
           <div class="contact-detail-text">
             <small>Email</small>
-            <p><a href="mailto:mineralproptyltd@gmail.com" style="color:var(--white);">mineralproptyltd@gmail.com</a></p>
+            <p><a href="mailto:mineralproptyltd@gmail.com" class="link-white">mineralproptyltd@gmail.com</a></p>
           </div>
         </div>
 
@@ -307,7 +307,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
               Send Enquiry
             </button>
-            <button type="reset" class="btn" style="background:var(--grey-light); color:var(--navy); border:1px solid var(--grey-mid);">Clear</button>
+            <button type="reset" class="btn btn-ghost">Clear</button>
           </div>
           <div id="formMsg" class="form-message"></div>
         </form>
@@ -330,8 +330,8 @@
         <div class="location-card-map">
           <iframe
             src="https://maps.google.com/maps?q=Mid-Rand%20Johannesburg&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            title="Mid-Rand Office map" style="border:0;"></iframe>
+            style="border:0;"
+            title="Mid-Rand Office map"></iframe>
         </div>
         <div class="location-card-body">
           <span class="label">Head Office</span>
@@ -344,8 +344,8 @@
         <div class="location-card-map">
           <iframe
             src="https://maps.google.com/maps?q=Delmas%20Mpumalanga&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            title="Delmas Workshop map" style="border:0;"></iframe>
+            style="border:0;"
+            title="Delmas Workshop map"></iframe>
         </div>
         <div class="location-card-body">
           <span class="label">Workshop Facility</span>
@@ -358,8 +358,8 @@
         <div class="location-card-map">
           <iframe
             src="https://maps.google.com/maps?q=Secunda%20Mpumalanga&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            title="Secunda Workshop map" style="border:0;"></iframe>
+            style="border:0;"
+            title="Secunda Workshop map"></iframe>
         </div>
         <div class="location-card-body">
           <span class="label">Workshop Facility</span>
@@ -379,8 +379,8 @@
       <p>Our engineering procurement team is standing by. Contact us today.</p>
     </div>
     <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="tel:0827421013" class="btn btn-primary">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+      <a href="tel:0827421013" class="btn btn-primary svg-18">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
         Call 082 742 1013
       </a>
       <a href="mailto:mineralproptyltd@gmail.com" class="btn btn-outline">Send an Email</a>
@@ -440,5 +440,6 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 <script src="js/main.js"></script>
+<script src="js/products.js"></script>
 </body>
 </html>
