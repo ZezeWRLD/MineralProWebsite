@@ -202,7 +202,42 @@
       .mv-grid { grid-template-columns: 1fr; }
       .infra-grid { padding: 1.5rem; }
     }
-  </style>
+  /* Horizontal carousel for partner grid — smooth CSS marquee */
+.partners-track-wrap {
+  overflow: hidden;
+  position: relative;
+  /* fade edges */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+.partners-track-wrap:hover .partners-track {
+  animation-play-state: paused;
+}
+.partners-track {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: partners-scroll 40s linear infinite;
+  will-change: transform;
+}
+.partners-track img {
+  flex: 0 0 auto;
+  width: 160px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  filter: grayscale(30%) opacity(0.85);
+  transition: filter 0.3s ease;
+}
+.partners-track img:hover {
+  filter: grayscale(0%) opacity(1);
+}
+@keyframes partners-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+/* Keep existing closing style tag */
+</style>
 </head>
 <body>
 
@@ -251,7 +286,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img class="hero-bg-img" src="media/pexels-tomfisk-2101137.png" alt="" onerror="this.style.display='none'">
+  <img class="hero-bg-img" src="media/section images/image_ae92ee6d.png" alt="" onerror="this.style.display='none'">
   <div class="container">
     <div class="hero-content">
       <span class="label">About Mineral Pro Enterprise</span>
@@ -288,7 +323,7 @@
             <div class="timeline-dot"></div>
             <!-- Change: align office naming -->
             <h4>Midrand Office Opened</h4>
-            <p>Head office at Cnr 16th Road &amp; George Avenue, Halfway House, offering full boardroom and co-working facilities.</p>
+            <p>Head office at Cnr 16th Road & George Avenue, Halfway House, offering full boardroom and co-working facilities.</p>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot"></div>
@@ -314,9 +349,9 @@
   <div class="container">
     <div class="section-header centered">
       <br>
-      <div class="section-eyebrow"><span class="label">Mission &amp; Vision</span></div>
+      <div class="section-eyebrow"><span class="label">Mission & Vision</span></div>
       <h2>Our Direction</h2>
-      <p>Clear purpose, measurable outcomes, and a commitment to excellence in every engagement.</p>
+      <p>Clear purpose, measurable outcomes, and a commitment to excellence in every engagement. Global import and export capabilities with access to the European market.</p>
     </div>
     <div class="mv-grid">
       <div class="mv-card">
@@ -376,7 +411,7 @@
   <div class="container">
     <div class="section-header centered">
       <div class="section-eyebrow"><span class="label">Our Facilities</span></div>
-      <h2>Infrastructure &amp; Value-Add</h2>
+      <h2>Infrastructure & Value-Add</h2>
       <p>Mineral Pro provides more than procurement — we provide a physical foundation for industrial operations and global partner expansion into Africa.</p>
     </div>
     <div class="infra-grid">
@@ -407,9 +442,9 @@
         <!-- Change: align office naming -->
         <span class="label">Head Office</span>
         <h3>Midrand Office</h3>
-        <p style="margin:.75rem 0;">Cnr 16th Road &amp; George Avenue, Halfway House, Midrand, Johannesburg, 0001</p>
+        <p style="margin:.75rem 0;">Cnr 16th Road & George Avenue, Halfway House, Midrand, Johannesburg, 0001</p>
         <ul style="margin-top:1rem;">
-          <li style="color:rgba(255,255,255,.55); font-size:.9rem; padding:.35rem 0; border-bottom:1px dashed rgba(255,255,255,.1); display:flex; gap:.6rem;"><span style="color:var(--teal)">▸</span> Full office &amp; boardroom facilities</li>
+          <li style="color:rgba(255,255,255,.55); font-size:.9rem; padding:.35rem 0; border-bottom:1px dashed rgba(255,255,255,.1); display:flex; gap:.6rem;"><span style="color:var(--teal)">▸</span> Full office & boardroom facilities</li>
           <li style="color:rgba(255,255,255,.55); font-size:.9rem; padding:.35rem 0; border-bottom:1px dashed rgba(255,255,255,.1); display:flex; gap:.6rem;"><span style="color:var(--teal)">▸</span> Co-working for visiting expatriate staff</li>
           <li style="color:rgba(255,255,255,.55); font-size:.9rem; padding:.35rem 0; display:flex; gap:.6rem;"><span style="color:var(--teal)">▸</span> Strategic hub for African expansion</li>
         </ul>
@@ -419,7 +454,7 @@
         <h3>Specialized Labour Pool</h3>
         <p style="margin:.75rem 0;">Ready-to-deploy qualified competent engineers and technicians with deep industry knowledge.</p>
         <ul style="margin-top:1rem;">
-          <li style="color:rgba(255,255,255,.55); font-size:.9rem; padding:.35rem 0; border-bottom:1px dashed rgba(255,255,255,.1); display:flex; gap:.6rem;"><span style="color:var(--teal)">▸</span> Mechanical engineers &amp; technicians</li>
+          <li style="color:rgba(255,255,255,.55); font-size:.9rem; padding:.35rem 0; border-bottom:1px dashed rgba(255,255,255,.1); display:flex; gap:.6rem;"><span style="color:var(--teal)">▸</span> Mechanical engineers & technicians</li>
           <li style="color:rgba(255,255,255,.55); font-size:.9rem; padding:.35rem 0; border-bottom:1px dashed rgba(255,255,255,.1); display:flex; gap:.6rem;"><span style="color:var(--teal)">▸</span> Instrumentation specialists</li>
           <li style="color:rgba(255,255,255,.55); font-size:.9rem; padding:.35rem 0; display:flex; gap:.6rem;"><span style="color:var(--teal)">▸</span> Project management capability</li>
         </ul>
@@ -465,7 +500,7 @@
     <div class="section-header centered" data-reveal="fade">
       <br>
       <div class="section-eyebrow"><span class="label">Compliance & Standards</span></div>
-      <h2>Certifications &amp; Standards</h2>
+      <h2>Certifications & Standards</h2>
       <p style="color:rgba(255,255,255,.65);">International standards. Local presence. We are committed to full compliance across quality, safety, environmental, and asset management domains.</p>
     </div>
     <div class="cert-table-wrap" style="max-width:860px; margin: 0 auto 3rem;" data-reveal>
@@ -485,7 +520,7 @@
           </tr>
           <tr>
             <td>ISO 45001:2018</td>
-            <td>Occupational Health &amp; Safety</td>
+            <td>Occupational Health & Safety</td>
             <td><span class="status-badge status-prep">Pre-Audit Preparation</span></td>
           </tr>
           <tr>
@@ -513,7 +548,7 @@
         </span>
         <span class="value-pill">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Import &amp; Export Licensed
+          Import & Export Licensed
         </span>
         <span class="value-pill">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -531,7 +566,7 @@
       </div>
       <div>
         <span class="label">International Licensing</span>
-        <h3>Import &amp; Export Certification</h3>
+        <h3>Import & Export Certification</h3>
         <p>Mineral Pro holds certified import and export licences, enabling streamlined global sourcing from leading international manufacturers. This certification is a key competitive differentiator in South Africa's and Global engineering procurement landscape, providing clients with access to world-class materials and technical solutions.</p>
         <div class="license-details">
           <div class="detail-item">
@@ -553,7 +588,7 @@
   <div class="container">
     <div class="split">
       <div class="split-img">
-        <img src="media/section images/image_6cf09db3.png" alt="">
+        <img src="media/section images/Mthokozisi_Ndlovu_Ultra-realistic_industrial_ecosystem_representing_a_fully_integra_70c4a80e-826b-49dd-b0c6-1e27736d03b7.jpg" alt="">
       </div>
       <div>
         <div class="section-header">
@@ -583,12 +618,13 @@
   <div class="container">
     <div class="section-header centered">
       <div class="section-eyebrow"><span class="label">Our Network</span></div>
-      <h2>Strategic Partners &amp; Clients</h2>
+      <h2>Strategic Partners & Clients</h2>
       <p>We collaborate with leading regional and global industrial brands to deliver world-class materials and technical solutions across the Globe.</p>
     </div>
     <!-- Partners Grid -->
-    <!-- <div class="partners-track-wrap" data-reveal="up-sm">
+    <div class="partners-track-wrap" data-reveal="up-sm">
       <div class="partners-track" id="partnersTrack">
+        <img src="media/partners/Transnet-Port-Terminals.png" alt="Partner" onerror="this.style.display='none'">
         <img src="media/partners/Picture1.png" alt="Partner 1" onerror="this.style.display='none'">
         <img src="media/partners/Picture2.png" alt="Partner 2" onerror="this.style.display='none'">
         <img src="media/partners/Picture3.png" alt="Partner 3" onerror="this.style.display='none'">
@@ -606,7 +642,8 @@
         <img src="media/partners/Picture15.png" alt="Partner 15" onerror="this.style.display='none'">
         <img src="media/partners/Picture16.png" alt="Partner 16" onerror="this.style.display='none'">
         <img src="media/partners/Picture17.png" alt="Partner 17" onerror="this.style.display='none'">
-        
+        <!-- Duplicate for seamless loop -->
+        <img src="media/partners/Transnet-Port-Terminals.png" alt="Partner" onerror="this.style.display='none'">
         <img src="media/partners/Picture1.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
         <img src="media/partners/Picture2.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
         <img src="media/partners/Picture3.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
@@ -617,7 +654,7 @@
         <img src="media/partners/Picture8.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
         <img src="media/partners/Picture9.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
       </div>
-    </div> -->
+    </div>
   </div>
 </section>
 
@@ -627,7 +664,7 @@
     <div class="section-header centered">
       <div class="section-eyebrow"><span class="label">Track Record</span></div>
       <h2>Completed Projects</h2>
-      <p>A simple placeholder list for completed delivery and support work.</p>
+      <!-- <p>A simple placeholder list for completed delivery and support work.</p> -->
     </div>
     <ul class="strength-list" style="max-width:860px; margin:0 auto;">
       <li>Plant filtration component supply support</li>
@@ -658,7 +695,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="media/Mineral_Logo.png" alt="Mineral Pro" onerror="this.style.display='none'">
-        <p>South Africa's trusted Engineering Supply Specialist and Industrial Procurement Partner.</p>
+        <p>South Africa's trusted Global Engineering Supply Specialist and Industrial Procurement Partner.</p>
         <div class="reg">Reg. No: 2020/772030/07 · Licence: W/2020/0087</div>
         <div class="footer-social-links">
           <a href="#" class="social-svg-link" aria-label="Instagram"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-instagram"/></svg></a><a href="#" class="social-svg-link" aria-label="Facebook"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-facebook"/></svg></a><a href="#" class="social-svg-link" aria-label="LinkedIn"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-linkedin"/></svg></a><a href="https://wa.me/27827421013" class="social-svg-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="media/social-icons.svg#social-whatsapp"/></svg></a>
@@ -678,10 +715,10 @@
         <ul>
           <li><a href="products.html#filtration">Filtration Systems</a></li>
           <li><a href="products.html#conveyor">Conveyor Systems</a></li>
-          <li><a href="products.html#maintenance">Engineering &amp; Maintenance</a></li>
-          <li><a href="products.html#electrical">Electrical &amp; Instrumentation</a></li>
-          <li><a href="products.html#automation">Automation &amp; Smart Systems</a></li>
-          <li><a href="products.html#digital">Digital &amp; Predictive Services</a></li>
+          <li><a href="products.html#maintenance">Engineering & Maintenance</a></li>
+          <li><a href="products.html#electrical">Electrical & Instrumentation</a></li>
+          <li><a href="products.html#automation">Automation & Smart Systems</a></li>
+          <li><a href="products.html#digital">Digital & Predictive Services</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -698,7 +735,7 @@
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
             <!-- Change: align footer location naming -->
-            <span>Cnr 16th Road &amp; George Avenue, Halfway House, Midrand, Johannesburg, 0001</span>
+            <span>Cnr 16th Road & George Avenue, Halfway House, Midrand, Johannesburg, 0001</span>
           </li>
         </ul>
       </div>
@@ -715,5 +752,6 @@
 </button>
 <script src="js/main.js"></script>
 <script src="js/products.js"></script>
+<!-- Partner carousel is driven by CSS animation (no JS needed) -->
 </body>
 </html>
