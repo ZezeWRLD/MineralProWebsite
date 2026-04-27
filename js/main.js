@@ -170,13 +170,13 @@
   // │  EMAILJS CONFIGURATION                                  │
   // │  1. Sign up at https://www.emailjs.com (free tier:      │
   // │     200 emails/month)                                   │
-  // │  2. Create an Email Service (Gmail → info.mineral…)     │
+  // │  2. Create an Email Service (Gmail → enquire.mineral…)     │
   // │  3. Create a template using the variables listed below  │
   // │  4. Replace the three placeholder strings below         │
   // └─────────────────────────────────────────────────────────┘
-  const EMAILJS_PUBLIC_KEY  = 'naIXJdfWn1gMeIRPJ';   // Account → API Keys
-  const EMAILJS_SERVICE_ID  = 'service_2lt1p5o';   // Email Services tab
-  const EMAILJS_TEMPLATE_ID = 'template_vej2gza';  // Email Templates tab
+  const EMAILJS_PUBLIC_KEY  = 'aCm0n-oNB2_sZx9Jd';   // Account → API Keys
+  const EMAILJS_SERVICE_ID  = 'service_joag8ob';   // Email Services tab
+  const EMAILJS_TEMPLATE_ID = 'template_y3sqr6q';  // Email Templates tab
 
   // Template variables available in your EmailJS template:
   //   {{from_name}}     – sender's full name
@@ -185,7 +185,7 @@
   //   {{phone}}         – sender's phone number (optional)
   //   {{service}}       – selected service area
   //   {{message}}       – enquiry message body
-  //   {{to_email}}      – destination (info.mineralproptyltd@gmail.com)
+  //   {{to_email}}      – destination (enquire.mineralpro@gmail.com)
   //   {{sent_at}}       – human-readable date/time of submission
   //   {{reply_to}}      – same as from_email, for one-click reply
 
@@ -237,7 +237,7 @@
       phone      : data['phone']                      || '—',
       service    : data['service']                    || 'General Enquiry',
       message    : data['enquiry']   || data['message'] || '—',
-      to_email   : 'info.mineralproptyltd@gmail.com',
+      to_email   : 'enquire.mineralpro@gmail.com',
       reply_to   : data['email']                      || '',
       sent_at    : new Date().toLocaleString('en-ZA', {
                      dateStyle: 'long', timeStyle: 'short'
@@ -262,7 +262,7 @@
         msg.className = 'form-message error';
         msg.innerHTML =
           '✕ &nbsp;Sending failed — please email us directly at ' +
-          '<a href="mailto:info.mineralproptyltd@gmail.com">info.mineralproptyltd@gmail.com</a>.';
+          '<a href="mailto:enquire.mineralpro@gmail.com">enquire.mineralpro@gmail.com</a>.';
       }
     } finally {
       btn.disabled = false;
