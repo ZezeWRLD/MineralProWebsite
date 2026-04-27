@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  MINERAL PRO ENTERPRISE — EMAILJS EMAIL TEMPLATE                ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║  HOW TO USE:                                                    ║
+  ║  1. Go to https://dashboard.emailjs.com                        ║
+  ║  2. Navigate to "Email Templates" → "Create New Template"      ║
+  ║  3. Set Subject: New Enquiry from {{from_name}} — {{service}}  ║
+  ║  4. Paste the full HTML below into the template body           ║
+  ║  5. Under "Settings", set Reply-To: {{reply_to}}              ║
+  ║  6. Under "Settings", set To Email: {{to_email}}              ║
+  ║  7. Save and copy the Template ID into main.js                 ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mineral Pro — New Enquiry</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f0f2f5;
+      color: #1a2235;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrapper {
+      max-width: 620px;
+      margin: 32px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: #0a1628;
+      padding: 36px 40px 32px;
+      text-align: center;
+      border-bottom: 3px solid #00b4a0;
+    }
+    .header-logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .header-logo-icon {
+      width: 48px; height: 48px;
+      background: #00b4a0;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .header-logo-icon svg { width: 26px; height: 26px; fill: #0a1628; }
+    .header-brand { text-align: left; }
+    .header-brand strong {
+      display: block;
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.3px;
+    }
+    .header-brand span {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .header-badge {
+      display: inline-block;
+      background: rgba(0,180,160,0.15);
+      border: 1px solid rgba(0,180,160,0.4);
+      color: #00b4a0;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    /* ── INTRO BAND ── */
+    .intro-band {
+      background: #00b4a0;
+      padding: 20px 40px;
+    }
+    .intro-band p {
+      color: #0a1628;
+      font-size: 14.5px;
+      font-weight: 600;
+    }
+    .intro-band span {
+      color: rgba(10,22,40,0.65);
+      font-weight: 400;
+      font-size: 13px;
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* ── BODY ── */
+    .body { padding: 36px 40px; }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #00b4a0;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e8ecf2;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .field {
+      background: #f6f8fb;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .field.full { grid-column: 1 / -1; }
+    .field-key {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #8896aa;
+      margin-bottom: 5px;
+    }
+    .field-val {
+      font-size: 14px;
+      color: #1a2235;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* Service badge */
+    .service-badge {
+      display: inline-block;
+      background: rgba(0,180,160,0.1);
+      border: 1px solid rgba(0,180,160,0.35);
+      color: #00887a;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* Message box */
+    .message-box {
+      background: #f6f8fb;
+      border: 1px solid #e2e8f0;
+      border-left: 3px solid #00b4a0;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 28px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: #2d3a4e;
+      white-space: pre-wrap;
+    }
+
+    /* Action button */
+    .btn-row { text-align: center; margin-bottom: 28px; }
+    .btn-reply {
+      display: inline-block;
+      background: #00b4a0;
+      color: #0a1628 !important;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .meta-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f0f2f5;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: #6b7a90;
+      margin-bottom: 28px;
+    }
+    .meta-row svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #0a1628;
+      padding: 28px 40px;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.7;
+    }
+    .footer a { color: #00b4a0; text-decoration: none; }
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      margin: 16px 0;
+    }
+    .footer-contact-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 14px;
+    }
+    .footer-contact-row a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .footer-contact-row a:hover { color: #00b4a0; }
+    .footer-contact-row svg { width: 13px; height: 13px; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-logo-row">
+      <div class="header-logo-icon">
+        <!-- Stylised "M" icon -->
+        <svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 22V4l10 9 10-9v18" stroke="#0a1628" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="header-brand">
+        <strong>Mineral Pro Enterprise</strong>
+        <span>Engineering &amp; Industrial Procurement</span>
+      </div>
+    </div>
+    <div class="header-badge">📬 New Website Enquiry</div>
+  </div>
+
+  <!-- INTRO BAND -->
+  <div class="intro-band">
+    <p>You have a new enquiry from {{from_name}}</p>
+    <span>Submitted via the contact form on mineralpro.co.za · {{sent_at}}</span>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SENDER DETAILS -->
+    <div class="section-label">Sender Details</div>
+    <div class="field-grid">
+      <div class="field">
+        <div class="field-key">Full Name</div>
+        <div class="field-val">{{from_name}}</div>
+      </div>
+      <div class="field">
+        <div class="field-key">Company / Organisation</div>
+        <div class="field-val">{{company}}</div>
+      </div>
+      <div class="field">
+        <div class="field-key">Email Address</div>
+        <div class="field-val">
+          <a href="mailto:{{from_email}}" style="color:#00887a;text-decoration:none;">
+            {{from_email}}
+          </a>
+        </div>
+      </div>
+      <div class="field">
+        <div class="field-key">Phone Number</div>
+        <div class="field-val">{{phone}}</div>
+      </div>
+      <div class="field full">
+        <div class="field-key">Service of Interest</div>
+        <div class="field-val">
+          <span class="service-badge">{{service}}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MESSAGE -->
+    <div class="section-label">Enquiry / Requirements</div>
+    <div class="message-box">{{message}}</div>
+
+    <!-- REPLY BUTTON -->
+    <div class="btn-row">
+      <a href="mailto:{{reply_to}}?subject=Re: Your enquiry — {{service}}" class="btn-reply">
+        ↩ &nbsp; Reply to {{from_name}}
+      </a>
+    </div>
+
+    <!-- META -->
+    <div class="meta-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg>
+      This enquiry was submitted at <strong>&nbsp;{{sent_at}}</strong>. &nbsp;We aim to respond within 24 hours.
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-contact-row">
+      <a href="tel:0827421013">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-8.18-8.18 19.79 19.79 0 01-3.07-8.63A2 2 0 014 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        082 742 1013
+      </a>
+      <a href="mailto:info.mineralproptyltd@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        info.mineralproptyltd@gmail.com
+      </a>
+    </div>
+    <hr class="footer-divider">
+    <p>
+      <strong style="color:rgba(255,255,255,0.6);">Mineral Pro Enterprise Pty Ltd</strong><br>
+      Cnr 16th Road &amp; George Avenue, Halfway House, Midrand, Johannesburg<br>
+      Reg. No: 2020/772030/07 &nbsp;·&nbsp; Licence: W/2020/0087<br><br>
+      <a href="https://mineralpro.co.za">mineralpro.co.za</a>
+      &nbsp;·&nbsp;
+      This is an automated notification from your website contact form.
+    </p>
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>

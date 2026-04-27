@@ -164,8 +164,36 @@
   });
 })();
 
-// ── 7. CONTACT / QUOTE FORM HANDLER ───────────────────────
+// ── 7. CONTACT / QUOTE FORM HANDLER (EmailJS) ─────────────
 (function () {
+  // ┌─────────────────────────────────────────────────────────┐
+  // │  EMAILJS CONFIGURATION                                  │
+  // │  1. Sign up at https://www.emailjs.com (free tier:      │
+  // │     200 emails/month)                                   │
+  // │  2. Create an Email Service (Gmail → info.mineral…)     │
+  // │  3. Create a template using the variables listed below  │
+  // │  4. Replace the three placeholder strings below         │
+  // └─────────────────────────────────────────────────────────┘
+  const EMAILJS_PUBLIC_KEY  = 'naIXJdfWn1gMeIRPJ';   // Account → API Keys
+  const EMAILJS_SERVICE_ID  = 'service_2lt1p5o';   // Email Services tab
+  const EMAILJS_TEMPLATE_ID = 'template_vej2gza';  // Email Templates tab
+
+  // Template variables available in your EmailJS template:
+  //   {{from_name}}     – sender's full name
+  //   {{company}}       – sender's company / organisation
+  //   {{from_email}}    – sender's email address
+  //   {{phone}}         – sender's phone number (optional)
+  //   {{service}}       – selected service area
+  //   {{message}}       – enquiry message body
+  //   {{to_email}}      – destination (info.mineralproptyltd@gmail.com)
+  //   {{sent_at}}       – human-readable date/time of submission
+  //   {{reply_to}}      – same as from_email, for one-click reply
+
+  // Initialise EmailJS once
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  }
+
   const form = document.getElementById('mpForm');
   if (!form) return;
 
@@ -182,25 +210,70 @@
     });
   }
 
-  // Submission
-  form.addEventListener('submit', e => {
+  // ── Submission ─────────────────────────────────────────────
+  form.addEventListener('submit', async e => {
     e.preventDefault();
+
     const msg = document.getElementById('formMsg');
     const btn = form.querySelector('[type="submit"]');
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
 
-    // Replace setTimeout with real EmailJS/fetch call when ready
-    setTimeout(() => {
+    // Show loading state
+    btn.disabled = true;
+    const originalLabel = btn.innerHTML;
+    btn.innerHTML = `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           style="width:18px;height:18px;animation:spin .8s linear infinite">
+        <path d="M12 2a10 10 0 0 1 10 10"/>
+      </svg>
+      Sending…`;
+
+    // Collect form data
+    const data = Object.fromEntries(new FormData(form));
+
+    const templateParams = {
+      from_name  : data['fname']  || data['name'] || '—',
+      company    : data['company']                    || '—',
+      from_email : data['email']                      || '—',
+      phone      : data['phone']                      || '—',
+      service    : data['service']                    || 'General Enquiry',
+      message    : data['enquiry']   || data['message'] || '—',
+      to_email   : 'info.mineralproptyltd@gmail.com',
+      reply_to   : data['email']                      || '',
+      sent_at    : new Date().toLocaleString('en-ZA', {
+                     dateStyle: 'long', timeStyle: 'short'
+                   }),
+    };
+
+    try {
+      if (typeof emailjs === 'undefined') {
+        throw new Error('EmailJS SDK not loaded. Add the script tag to your HTML <head>.');
+      }
+
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+
       if (msg) {
         msg.className = 'form-message success';
-        msg.textContent = '✓ Message sent! We will respond within 24 hours.';
+        msg.innerHTML = '✓ &nbsp;Message sent! We will respond within 24 hours.';
       }
       form.reset();
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      if (msg) {
+        msg.className = 'form-message error';
+        msg.innerHTML =
+          '✕ &nbsp;Sending failed — please email us directly at ' +
+          '<a href="mailto:info.mineralproptyltd@gmail.com">info.mineralproptyltd@gmail.com</a>.';
+      }
+    } finally {
       btn.disabled = false;
-      btn.textContent = 'Send Message';
-    }, 1200);
+      btn.innerHTML = originalLabel;
+    }
   });
+
+  // Spin animation for loading icon
+  const style = document.createElement('style');
+  style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+  document.head.appendChild(style);
 })();
 
 // ── 8. SMOOTH ANCHOR SCROLL (offset for sticky navbar) ────
