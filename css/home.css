@@ -83,9 +83,10 @@
   animation: marquee 38s linear infinite;
 }
 .partners-track img {
-  height: 44px; width: auto;
+  height: 75px; width: auto;
   object-fit: contain;
   flex-shrink: 0;
+  border-radius: 10px;
   transition: var(--transition);
 }
 .partners-track img:hover { opacity: .85; transform: scale(1.05); }
