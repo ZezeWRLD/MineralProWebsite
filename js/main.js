@@ -174,9 +174,10 @@
   // │  3. Create a template using the variables listed below  │
   // │  4. Replace the three placeholder strings below         │
   // └─────────────────────────────────────────────────────────┘
-  const EMAILJS_PUBLIC_KEY  = 'aCm0n-oNB2_sZx9Jd';   // Account → API Keys
-  const EMAILJS_SERVICE_ID  = 'service_joag8ob';   // Email Services tab
-  const EMAILJS_TEMPLATE_ID = 'template_y3sqr6q';  // Email Templates tab
+  const EMAILJS_PUBLIC_KEY  = 'aCm0n-oNB2_sZx9Jd';       // Account → API Keys
+  const EMAILJS_SERVICE_ID  = 'service_joag8ob';       // Email Services tab
+  const EMAILJS_TEMPLATE_ID = 'template_y3sqr6q';      // Email Templates tab (to business)
+  const EMAILJS_AUTOREPLY_TEMPLATE_ID = 'template_57c1wt6';  // Auto-reply to customer
 
   // Template variables available in your EmailJS template:
   //   {{from_name}}     – sender's full name
@@ -249,7 +250,29 @@
         throw new Error('EmailJS SDK not loaded. Add the script tag to your HTML <head>.');
       }
 
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+      // Send two concurrent emails:
+      // 1. Business email (original submission)
+      // 2. Auto-reply to customer
+      const emailToBusiness = emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+      
+      const customerReplyParams = {
+        from_name  : data['fname']  || data['name'] || '—',
+        company    : data['company']                    || '—',
+        from_email : data['email']                      || '—',
+        phone      : data['phone']                      || '—',
+        service    : data['service']                    || 'General Enquiry',
+        message    : data['enquiry']   || data['message'] || '—',
+        to_email   : data['email']                      || '—',
+        reply_to   : 'enquire.mineralpro@gmail.com'     || '',
+        sent_at    : new Date().toLocaleString('en-ZA', {
+                       dateStyle: 'long', timeStyle: 'short'
+                     }),
+      };
+      
+      const emailToCustomer = emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_AUTOREPLY_TEMPLATE_ID, customerReplyParams);
+
+      // Wait for both emails to send
+      await Promise.all([emailToBusiness, emailToCustomer]);
 
       if (msg) {
         msg.className = 'form-message success';
